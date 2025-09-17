@@ -2,11 +2,12 @@ public class Receita {
     public String titulo;
     public String descricao;
     public String imagem;
-    public int idreceita;   
+    public int idReceita;
+    private List<ReceitaIngrediente> ingrediente;  
 
-    public Receita (int idreceita, String titulo, String descricao, String imagem){
+    public Receita (int idReceita, String titulo, String descricao, String imagem){
         this.descricao = descricao;
-        this.idreceita = idreceita;
+        this.idReceita = idReceita;
         this.imagem = imagem;
         this.titulo = titulo;
     }

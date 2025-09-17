@@ -1,9 +1,9 @@
 public class Ingrediente {
-    public int idingrediente;
+    public int idIngrediente;
     public String ingrediente;
 
-    public Ingrediente(String ingrediente, int idingrediente) {
+    public Ingrediente(String ingrediente, int idIngrediente) {
         this.ingrediente = ingrediente;
-        this.idingrediente = idingrediente;
+        this.idIngrediente = idIngrediente;
     }
 }

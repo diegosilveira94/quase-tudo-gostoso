@@ -1,11 +1,11 @@
 public class Comentario {
     public int nota;
-    public String datacomentario;
-    public int idcomentario;
+    public String dataComentario;
+    public int idComentario;
 
-    public Comentario (int nota, String datacomentario, int idcomentario){
-        this.datacomentario = datacomentario;
-        this.idcomentario = idcomentario;
+    public Comentario (int nota, String dataComentario, int idComentario){
+        this.dataComentario = dataComentario;
+        this.idComentario = idComentario;
         this.nota = nota;
     }
 }

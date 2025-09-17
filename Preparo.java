@@ -1,13 +1,13 @@
 public class Preparo {
     int idpreparo;
-    String modo_preparo;
-    String urlvideo;
-    String tempopreparo;
+    String modoPreparo;
+    String urlVideo;
+    String tempoPreparo;
 
-    public Preparo(int idpreparo, String modo_preparo, String urlvideo, String tempopreparo){
-        this.idpreparo = idpreparo;
-        this.modo_preparo = modo_preparo;
-        this.urlvideo = urlvideo;
-        this.tempopreparo = tempopreparo;
+    public Preparo(int idPreparo, String modoPreparo, String urlVideo, String tempoPreparo){
+        this.idPreparo = idPreparo;
+        this.modoPreparo = modoPreparo;
+        this.urlVideo = urlVideo;
+        this.tempoPreparo = tempoPreparo;
     }
 }
