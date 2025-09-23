@@ -1,5 +1,5 @@
 public class ReceitaIngrediente {
-    public float qtd;
+    private float qtd;
     private Receita receita;
     private Ingrediente ingrediente;
 
@@ -8,4 +8,12 @@ public class ReceitaIngrediente {
         this.receita = receita;
         this.ingrediente = ingrediente;
     };
+
+    public float getQtd() {
+        return qtd;
+    }
+
+    public void setQtd(float qtd) {
+        this.qtd = qtd;
+    }
 }
