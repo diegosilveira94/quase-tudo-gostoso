@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-
+package model;
 public class Comentario {
     private int nota;
     private String dataComentario;

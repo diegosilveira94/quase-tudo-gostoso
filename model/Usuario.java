@@ -1,3 +1,4 @@
+package model;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,20 +10,9 @@ public class Usuario {
     private int cep;
     private char genero;
     private String senha;
-    private String dataIncricao;
-    private List<Comentario> comentario;
-
-    public Usuario(int idUsuario, String nomeUsuario, String email, String dataNasc, int cep, char genero, String senha, String dataInscricao) {
-        this.idUsuario = idUsuario;
-        this.nomeUsuario = nomeUsuario;
-        this.email = email;
-        this.dataNasc = dataNasc;
-        this.cep = cep;
-        this.genero = genero;
-        this.senha = senha;
-        this.dataIncricao = dataInscricao;
-        this.comentario = new ArrayList<>();
-    }
+    private String dataInscricao;
+    private List<Comentario> comentario = new ArrayList<>();
+    private List<Receita> receitas = new ArrayList<>();
 
     public int getIdUsuario() {
         return idUsuario;
@@ -80,12 +70,12 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public String getDataIncricao() {
-        return dataIncricao;
+    public String getDataInscricao() {
+        return dataInscricao;
     }
 
-    public void setDataIncricao(String dataIncricao) {
-        this.dataIncricao = dataIncricao;
+    public void setDataInscricao(String dataInscricao) {
+        this.dataInscricao = dataInscricao;
     }
 
     public List<Comentario> getComentario() {
@@ -94,5 +84,13 @@ public class Usuario {
 
     public void setComentario(List<Comentario> comentario) {
         this.comentario = comentario;
+    }
+
+    public List<Receita> getReceitas() {
+        return receitas;
+    }
+
+    public void setReceitas(List<Receita> receitas) {
+        this.receitas = receitas;
     }
 }

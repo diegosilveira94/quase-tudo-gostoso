@@ -1,3 +1,5 @@
+package model;
+
 public class ReceitaIngrediente {
     private float qtd;
     private Receita receita;

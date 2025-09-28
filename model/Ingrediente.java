@@ -1,16 +1,12 @@
+package model;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Ingrediente {
     private int idIngrediente;
     private String ingrediente;
-    private List<ReceitaIngrediente> receita;
-
-    public Ingrediente(String ingrediente, int idIngrediente) {
-        this.ingrediente = ingrediente;
-        this.idIngrediente = idIngrediente;
-        this.receita = new ArrayList<>();
-    }
+    private List<ReceitaIngrediente> receita = new ArrayList<>();
+    static List<Ingrediente> ingredientes = new ArrayList<>();
 
     public int getIdIngrediente() {
         return idIngrediente;
@@ -28,11 +24,4 @@ public class Ingrediente {
         this.ingrediente = ingrediente;
     }
 
-    public List<ReceitaIngrediente> getReceita() {
-        return receita;
-    }
-
-    public void setReceita(List<ReceitaIngrediente> receita) {
-        this.receita = receita;
-    }
 }
