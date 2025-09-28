@@ -8,7 +8,6 @@ Este trabalho interdisciplinar está sendo desenvolvido durante o curso de Anál
 
 Esse programa tem como objetivo a criação de uma plataforma de receitas no qual faz referência à outra já bem conhecida :)
 <br/>
-<br/>
 
 ---
 
@@ -73,3 +72,4 @@ javac Main.java
 ## 📄 Licença
 
 Este projeto é apenas para fins educacionais e não possui licença comercial.
+
