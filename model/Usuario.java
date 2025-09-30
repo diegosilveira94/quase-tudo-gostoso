@@ -10,6 +10,7 @@ public class Usuario {
     private int cep;
     private char genero;
     private String senha;
+    private String senhaConfirmada;
     private String dataInscricao;
     private List<Comentario> comentario = new ArrayList<>();
     private List<Receita> receitas = new ArrayList<>();
@@ -70,6 +71,10 @@ public class Usuario {
         this.senha = senha;
     }
 
+    public void setConfirmaSenha(String senhaConfirmada){
+        this.senhaConfirmada = senhaConfirmada;
+    }
+    
     public String getDataInscricao() {
         return dataInscricao;
     }

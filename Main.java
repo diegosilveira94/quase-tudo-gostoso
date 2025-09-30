@@ -9,10 +9,10 @@ import java.util.Scanner;
 
 public class Main {
 
-        private static Scanner scanner = new Scanner(System.in);
-        private static List<Receita> receitas = new ArrayList<>();
-        private static List<Usuario> usuarios = new ArrayList<>();
-        private static List<Ingrediente> ingredientes = new ArrayList<>();
+    private static Scanner scanner = new Scanner(System.in);
+    private static List<Receita> receitas = new ArrayList<>();
+    private static List<Usuario> usuarios = new ArrayList<>();
+    private static List<Ingrediente> ingredientes = new ArrayList<>();
 
     public static void main(String[] args) {
         int opcao;
@@ -69,15 +69,29 @@ public class Main {
         System.out.println("Data de Nascimento: ");
         String dataNasc = scanner.nextLine();
         System.out.println("CEP (Apenas números): ");
-        int cep = scanner.nextInt();
-        scanner.nextLine(); // limpar buffer
+        String cepS = scanner.nextLine();
+        int cep = Integer.parseInt(cepS);
         System.out.println("Gênero (M/F): ");
-        char genero = scanner.next().charAt(0);
-        System.out.println("Senha: ");
-        String senha = scanner.nextLine();
+        String generoS = scanner.nextLine();
+        char genero = generoS.charAt(0);
+        boolean eqSenha = false;
+        String senha = "";
+        String senhaConfirmada = "";
+        do {
+            System.out.println("Senha: ");
+            senha = scanner.nextLine();
+            System.out.println("Confirme sua senha:");
+            senhaConfirmada = scanner.nextLine();
+    
+            if (senha.equals(senhaConfirmada)) {
+                eqSenha = true;
+            } else {
+                System.out.println("Senhas não coincidem. Favor digitar novamente.");
+            }
+        } while (!eqSenha);
 
         CriarUsuarioService service = new CriarUsuarioService();
-        Usuario usuario = service.criarUsuario(nome, email, dataNasc, cep, genero, senha);
+        Usuario usuario = service.criarUsuario(nome, email, dataNasc, cep, genero, senha, senhaConfirmada);
 
         usuarios.add(usuario);
         System.out.println("\nUsuário adicionado com sucesso!");
