@@ -49,7 +49,7 @@ public class Main {
         System.out.println("Descrição da Receita: ");
         String descricao = scanner.nextLine();
 
-        CriarReceitaService service = new CriarReceitaService();
+        ReceitaService service = new ReceitaService();
         Receita receita = service.criarReceita(titulo, descricao);
 
         receitas.add(receita);
