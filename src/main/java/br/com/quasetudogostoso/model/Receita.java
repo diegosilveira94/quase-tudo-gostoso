@@ -10,7 +10,7 @@ public class Receita {
     private String imagem;
     private List<ReceitaIngrediente> ingrediente = new ArrayList<>();
     private List<CategoriaReceita> categoria = new ArrayList<>();
-    private List<model.Comentario> comentario = new ArrayList<>();
+    private List<Comentario> comentario = new ArrayList<>();
     private Usuario usuario;
 
     public Receita() {

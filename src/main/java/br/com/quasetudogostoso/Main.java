@@ -1,9 +1,7 @@
 import model.Ingrediente;
-import service.IngredienteService;
-import src.main.java.br.com.quasetudogostoso.model.Receita;
-import src.main.java.br.com.quasetudogostoso.model.Usuario;
-import src.main.java.br.com.quasetudogostoso.service.ReceitaService;
-import src.main.java.br.com.quasetudogostoso.service.UsuarioService;
+import model.Receita;
+import model.Usuario;
+import service.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,10 +9,10 @@ import java.util.Scanner;
 
 public class Main {
 
-        private static Scanner scanner = new Scanner(System.in);
-        private static List<Receita> receitas = new ArrayList<>();
-        private static List<Usuario> usuarios = new ArrayList<>();
-        private static List<Ingrediente> ingredientes = new ArrayList<>();
+    private static Scanner scanner = new Scanner(System.in);
+    private static List<Receita> receitas = new ArrayList<>();
+    private static List<Usuario> usuarios = new ArrayList<>();
+    private static List<Ingrediente> ingredientes = new ArrayList<>();
 
     public static void main(String[] args) {
         int opcao;
@@ -51,16 +49,16 @@ public class Main {
         System.out.println("Descrição da Receita: ");
         String descricao = scanner.nextLine();
 
-        ReceitaService service = new ReceitaService();
-        Receita receita = service.adicionar(titulo, descricao);
+        CriarReceitaService service = new CriarReceitaService();
+        Receita receita = service.criarReceita(titulo, descricao);
 
         receitas.add(receita);
         System.out.println("\nReceita adicionada com sucesso!");
     }
 
     private static void listarReceitas() {
-        ReceitaService service = new ReceitaService();
-        service.listar();
+        ListarReceitasService service = new ListarReceitasService();
+        service.listar(receitas);
     }
 
     private static void adicionarUsuario() {
@@ -71,22 +69,36 @@ public class Main {
         System.out.println("Data de Nascimento: ");
         String dataNasc = scanner.nextLine();
         System.out.println("CEP (Apenas números): ");
-        int cep = scanner.nextInt();
-        scanner.nextLine(); // limpar buffer
+        String cepS = scanner.nextLine();
+        int cep = Integer.parseInt(cepS);
         System.out.println("Gênero (M/F): ");
-        char genero = scanner.next().charAt(0);
-        System.out.println("Senha: ");
-        String senha = scanner.nextLine();
+        String generoS = scanner.nextLine();
+        char genero = generoS.charAt(0);
+        boolean eqSenha = false;
+        String senha = "";
+        String senhaConfirmada = "";
+        do {
+            System.out.println("Senha: ");
+            senha = scanner.nextLine();
+            System.out.println("Confirme sua senha:");
+            senhaConfirmada = scanner.nextLine();
+    
+            if (senha.equals(senhaConfirmada)) {
+                eqSenha = true;
+            } else {
+                System.out.println("Senhas não coincidem. Favor digitar novamente.");
+            }
+        } while (!eqSenha);
 
-        UsuarioService service = new UsuarioService();
-        Usuario usuario = service.adicionar(nome, email, dataNasc, cep, genero, senha);
+        CriarUsuarioService service = new CriarUsuarioService();
+        Usuario usuario = service.criarUsuario(nome, email, dataNasc, cep, genero, senha, senhaConfirmada);
 
         usuarios.add(usuario);
         System.out.println("\nUsuário adicionado com sucesso!");
     }
 
     private static void listarUsuarios() {
-        UsuarioService service = new UsuarioService();
+        ListarUsuariosService service = new ListarUsuariosService();
         service.listar(usuarios);
     }
 
@@ -94,7 +106,7 @@ public class Main {
         System.out.println("Informe o ingrediente: ");
         String nomeIngrediente = scanner.nextLine();
 
-        service.IngredienteService service = new IngredienteService();
+        CriarIngredienteService service = new CriarIngredienteService();
         Ingrediente ingrediente = service.criarIngrediente(nomeIngrediente);
 
         ingredientes.add(ingrediente);
@@ -102,7 +114,7 @@ public class Main {
     }
 
     private static void listarIngredientes() {
-        service.IngredienteService service = new IngredienteService();
+        ListarIngredienteService service = new ListarIngredienteService();
         service.listar(ingredientes);
     }
 }

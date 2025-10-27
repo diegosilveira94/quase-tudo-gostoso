@@ -2,20 +2,38 @@ package src.main.java.br.com.quasetudogostoso.service;
 
 import src.main.java.br.com.quasetudogostoso.model.Usuario;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UsuarioService {
-    public void listar(List<Usuario> usuarios) {
-        System.out.println("\n === Usuários ===");
-        if (usuarios.isEmpty()) {
-            System.out.println("Nenhum usuário cadastrado.");
-            return;
-        }
+    private final List<Usuario> usuarios = new ArrayList<>();
+    private int contador = 1;
 
-        for (Usuario user : usuarios) System.out.printf("ID: %d - %s | Data inscrição: %s %n", user.getIdUsuario(), user.getNomeUsuario(), user.getDataInscricao());
-    }
+    // UTILIZADO PARA O MAIN.JAVA
+//    public void listar(List<Usuario> usuarios) {
+//        System.out.println("\n === Usuários ===");
+//        if (usuarios.isEmpty()) {
+//            System.out.println("Nenhum usuário cadastrado.");
+//            return;
+//        }
+//
+//
+//
+//        for (Usuario user : usuarios) System.out.printf("ID: %d - %s | Data inscrição: %s %n", user.getIdUsuario(), user.getNomeUsuario(), user.getDataInscricao());
+//    }
 
-    public Usuario adicionar(String nome, String email, String dataNasc, int cep, char genero, String senha) {
-        return null;
+    public List<Usuario> listar() { return usuarios;}
+
+    public Usuario adicionar(String nome, String email, String dataNasc, int cep, String genero, String senha) {
+        Usuario u = new Usuario();
+        u.getIdUsuario(contador++);
+        u.getNomeUsuario(nome);
+        u.getEmail(email);
+        u.getDataNasc(dataNasc);
+        u.getCep(cep);
+        u.getGenero(genero);
+        u.getSenha(senha);
+        usuarios.add(u);
+        return u;
     }
 }

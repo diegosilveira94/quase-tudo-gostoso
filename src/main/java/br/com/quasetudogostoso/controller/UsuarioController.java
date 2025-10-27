@@ -2,8 +2,8 @@ package src.main.java.br.com.quasetudogostoso.controller;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
-import src.main.java.br.com.quasetudogostoso.model.Receita;
-import src.main.java.br.com.quasetudogostoso.service.ReceitaService;
+import src.main.java.br.com.quasetudogostoso.model.Usuario;
+import src.main.java.br.com.quasetudogostoso.service.UsuarioService;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -11,10 +11,10 @@ import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
-public class ReceitaController implements HttpHandler {
-    private final ReceitaService service;
+public class UsuarioController implements HttpHandler {
+    private final UsuarioService service;
 
-    public ReceitaController(ReceitaService service) {
+    public UsuarioControler(UsuarioService service) {
         this.service = service;
     }
 
@@ -38,15 +38,15 @@ public class ReceitaController implements HttpHandler {
     }
 
     private void handleGet(HttpExchange exchange) throws IOException {
-        List<Receita> receitas = service.listar();
+        List<Usuario> usuarios = service.listar();
         StringBuilder json = new StringBuilder("[");
-        for (int i = 0; i < receitas.size(); i++) {
-            Receita r = receitas.get(i);
+        for (int i = 0; i < usuarios.size(); i++) {
+            Usuario u = usuarios.get(i);
             json.append(String.format(
-                    "{\"id\":%d,\"titulo\":\"%s\",\"descricao\":\"%s\"}",
-                    r.getIdReceita(), r.getTitulo(), r.getDescricao()
+                    "{\"id\":%d,\"nome\":\"%s\",\"email\":\"%s\",\"dataNasc\":\"%s\",\"cep\":\"%d\",\"genero\":\"%c\",\"senha\":\"%s\"}",
+                    u.getIdUsuario(), u.getNomeUsuario(), u.getEmail(), u.getDataNasc(), u.getCep(), u.getGenero(), u.getSenha()
             ));
-            if (i < receitas.size() - 1) json.append(",");
+            if (i < usuarios.size() - 1) json.append(",");
         }
         json.append("]");
         byte[] bytes = json.toString().getBytes(StandardCharsets.UTF_8);
@@ -61,13 +61,17 @@ public class ReceitaController implements HttpHandler {
         InputStream is = exchange.getRequestBody();
         String body = new String(is.readAllBytes(), StandardCharsets.UTF_8);
 
-        // {"titulo":"Bolo","descricao":"Delicioso"}
-        String titulo = body.replaceAll(".*\"titulo\"\\s*:\\s*\"([^\"]+)\".*", "$1");
-        String descricao = body.replaceAll(".*\"descricao\"\\s*:\\s*\"([^\"]+)\".*", "$1");
+        // {"nome":"Diego","descricao":"Delicioso"}
+        String nome = body.replaceAll(".*\"nome\"\\s*:\\s*\"([^\"]+)\".*", "$1");
+        String email = body.replaceAll(".*\"email\"\\s*:\\s*\"([^\"]+)\".*", "$1");
+        String dataNasc = body.replaceAll(".*\"dataNasc\"\\s*:\\s*\"([^\"]+)\".*", "$1");
+        int cep = Integer.parseInt(body.replaceAll(".*\"cep\"\\s*:\\s*\"([^\"]+)\".*", "$1"));
+        String genero = body.replaceAll(".*\"genero\"\\s*:\\s*\"([^\"]+)\".*", "$1");
+        String senha = body.replaceAll(".*\"senha\"\\s*:\\s*\"([^\"]+)\".*", "$1");
 
-        Receita r = service.adicionar(titulo, descricao);
+        Usuario u = service.adicionar(nome, email, dataNasc, cep, genero, senha);
 
-        String resp = String.format("{\"status\":\"Receita criada!\",\"id\":%d}", r.getIdReceita());
+        String resp = String.format("{\"status\":\"Usuario criado!\",\"id\":%d}", u.getIdUsuario());
         byte[] bytes = resp.getBytes(StandardCharsets.UTF_8);
         exchange.getResponseHeaders().set("Content-Type", "application/json; charset=UTF-8");
         exchange.sendResponseHeaders(200, bytes.length);

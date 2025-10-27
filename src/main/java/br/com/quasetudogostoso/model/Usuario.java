@@ -8,13 +8,14 @@ public class Usuario {
     private String email;
     private String dataNasc;
     private int cep;
-    private char genero;
+    private String genero;
     private String senha;
+    private String senhaConfirmada;
     private String dataInscricao;
     private List<model.Comentario> comentario = new ArrayList<>();
     private List<Receita> receitas = new ArrayList<>();
 
-    public int getIdUsuario() {
+    public int getIdUsuario(int i) {
         return idUsuario;
     }
 
@@ -22,7 +23,7 @@ public class Usuario {
         this.idUsuario = idUsuario;
     }
 
-    public String getNomeUsuario() {
+    public String getNomeUsuario(String nome) {
         return nomeUsuario;
     }
 
@@ -30,46 +31,50 @@ public class Usuario {
         this.nomeUsuario = nomeUsuario;
     }
 
-    public String getEmail() {
-        return email;
+    public String getEmail(String email) {
+        return this.email;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getDataNasc() {
-        return dataNasc;
+    public String getDataNasc(String dataNasc) {
+        return this.dataNasc;
     }
 
     public void setDataNasc(String dataNasc) {
         this.dataNasc = dataNasc;
     }
 
-    public int getCep() {
-        return cep;
+    public int getCep(int cep) {
+        return this.cep;
     }
 
     public void setCep(int cep) {
         this.cep = cep;
     }
 
-    public char getGenero() {
-        return genero;
+    public String getGenero(String genero) {
+        return this.genero;
     }
 
-    public void setGenero(char genero) {
+    public void setGenero(String genero) {
         this.genero = genero;
     }
 
-    public String getSenha() {
-        return senha;
+    public String getSenha(String senha) {
+        return this.senha;
     }
 
     public void setSenha(String senha) {
         this.senha = senha;
     }
 
+    public void setConfirmaSenha(String senhaConfirmada){
+        this.senhaConfirmada = senhaConfirmada;
+    }
+    
     public String getDataInscricao() {
         return dataInscricao;
     }
