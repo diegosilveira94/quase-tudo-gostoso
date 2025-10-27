@@ -1,11 +1,13 @@
-package model;
+package src.main.java.br.com.quasetudogostoso.model;
+
+import src.main.java.br.com.quasetudogostoso.model.Receita;
 
 public class ReceitaIngrediente {
     private float qtd;
     private Receita receita;
-    private Ingrediente ingrediente;
+    private model.Ingrediente ingrediente;
 
-    public ReceitaIngrediente(float qtd, Receita receita, Ingrediente ingrediente) {
+    public ReceitaIngrediente(float qtd, Receita receita, model.Ingrediente ingrediente) {
         this.qtd = qtd;
         this.receita = receita;
         this.ingrediente = ingrediente;

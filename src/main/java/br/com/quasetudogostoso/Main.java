@@ -1,7 +1,9 @@
 import model.Ingrediente;
-import model.Receita;
-import model.Usuario;
-import service.*;
+import service.IngredienteService;
+import src.main.java.br.com.quasetudogostoso.model.Receita;
+import src.main.java.br.com.quasetudogostoso.model.Usuario;
+import src.main.java.br.com.quasetudogostoso.service.ReceitaService;
+import src.main.java.br.com.quasetudogostoso.service.UsuarioService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,15 +52,15 @@ public class Main {
         String descricao = scanner.nextLine();
 
         ReceitaService service = new ReceitaService();
-        Receita receita = service.criarReceita(titulo, descricao);
+        Receita receita = service.adicionar(titulo, descricao);
 
         receitas.add(receita);
         System.out.println("\nReceita adicionada com sucesso!");
     }
 
     private static void listarReceitas() {
-        ListarReceitasService service = new ListarReceitasService();
-        service.listar(receitas);
+        ReceitaService service = new ReceitaService();
+        service.listar();
     }
 
     private static void adicionarUsuario() {
@@ -76,15 +78,15 @@ public class Main {
         System.out.println("Senha: ");
         String senha = scanner.nextLine();
 
-        CriarUsuarioService service = new CriarUsuarioService();
-        Usuario usuario = service.criarUsuario(nome, email, dataNasc, cep, genero, senha);
+        UsuarioService service = new UsuarioService();
+        Usuario usuario = service.adicionar(nome, email, dataNasc, cep, genero, senha);
 
         usuarios.add(usuario);
         System.out.println("\nUsuário adicionado com sucesso!");
     }
 
     private static void listarUsuarios() {
-        ListarUsuariosService service = new ListarUsuariosService();
+        UsuarioService service = new UsuarioService();
         service.listar(usuarios);
     }
 
@@ -92,7 +94,7 @@ public class Main {
         System.out.println("Informe o ingrediente: ");
         String nomeIngrediente = scanner.nextLine();
 
-        CriarIngredienteService service = new CriarIngredienteService();
+        service.IngredienteService service = new IngredienteService();
         Ingrediente ingrediente = service.criarIngrediente(nomeIngrediente);
 
         ingredientes.add(ingrediente);
@@ -100,7 +102,7 @@ public class Main {
     }
 
     private static void listarIngredientes() {
-        ListarIngredienteService service = new ListarIngredienteService();
+        service.IngredienteService service = new IngredienteService();
         service.listar(ingredientes);
     }
 }

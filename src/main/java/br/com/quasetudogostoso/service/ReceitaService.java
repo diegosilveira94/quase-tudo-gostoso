@@ -1,16 +1,25 @@
-package service;
+package src.main.java.br.com.quasetudogostoso.service;
 
-import model.Receita;
-import repository.ReceitaRepository;
+import src.main.java.br.com.quasetudogostoso.model.Receita;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ReceitaService {
-    private ReceitaRepository receitaRepository;
+    private final List<Receita> receitas = new ArrayList<>();
+    private int contador = 1;
 
-    public ReceitaService(ReceitaRepository receitaRepository) {
-        this.receitaRepository = receitaRepository;
+    public List<Receita> listar() {
+        return receitas;
     }
 
-    public void criarReceita(Receita receita) {
-        receitaRepository.salvar(receita);
+    public Receita adicionar(String titulo, String descricao) {
+        Receita r = new Receita();
+        r.setIdReceita(contador++);
+        r.setTitulo(titulo);
+        r.setDescricao(descricao);
+        receitas.add(r);
+        return r;
     }
 }
+

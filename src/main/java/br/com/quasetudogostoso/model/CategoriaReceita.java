@@ -1,4 +1,5 @@
-package model;
-public class CategoriaReceita {
-    Categoria categoria;
+package src.main.java.br.com.quasetudogostoso.model;
+
+public interface CategoriaReceita {
+
 }

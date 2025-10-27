@@ -1,4 +1,4 @@
-package model;
+package src.main.java.br.com.quasetudogostoso.model;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +11,7 @@ public class Usuario {
     private char genero;
     private String senha;
     private String dataInscricao;
-    private List<Comentario> comentario = new ArrayList<>();
+    private List<model.Comentario> comentario = new ArrayList<>();
     private List<Receita> receitas = new ArrayList<>();
 
     public int getIdUsuario() {
@@ -78,11 +78,11 @@ public class Usuario {
         this.dataInscricao = dataInscricao;
     }
 
-    public List<Comentario> getComentario() {
+    public List<model.Comentario> getComentario() {
         return comentario;
     }
 
-    public void setComentario(List<Comentario> comentario) {
+    public void setComentario(List<model.Comentario> comentario) {
         this.comentario = comentario;
     }
 

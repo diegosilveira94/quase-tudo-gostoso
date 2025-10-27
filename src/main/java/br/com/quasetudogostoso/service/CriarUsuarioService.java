@@ -1,6 +1,6 @@
 package service;
 
-import model.Usuario;
+import src.main.java.br.com.quasetudogostoso.model.Usuario;
 
 import java.time.LocalDateTime;
 

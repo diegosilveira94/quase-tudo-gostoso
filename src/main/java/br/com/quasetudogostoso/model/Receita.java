@@ -1,27 +1,22 @@
-package model;
+package src.main.java.br.com.quasetudogostoso.model;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Receita {
+    private int idReceita;
     private String titulo;
     private String descricao;
     private String imagem;
-    private int idReceita;
-    private List<ReceitaIngrediente> ingrediente;
-    private List<CategoriaReceita> categoria;
-    private List<Comentario> comentario;
-    static List<Receita> receitas = new ArrayList<Receita>();
+    private List<ReceitaIngrediente> ingrediente = new ArrayList<>();
+    private List<CategoriaReceita> categoria = new ArrayList<>();
+    private List<model.Comentario> comentario = new ArrayList<>();
     private Usuario usuario;
 
-    public Receita (){
-        this.descricao = descricao;
-        this.idReceita = idReceita;
-        this.imagem = imagem;
-        this.titulo = titulo;
+    public Receita() {
         this.categoria = new ArrayList<>();
         this.comentario = new ArrayList<>();
         this.ingrediente = new ArrayList<>();
-        this.usuario = usuario;
     }
 
     public String getTitulo() {

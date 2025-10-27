@@ -1,12 +1,10 @@
-package service;
+package src.main.java.br.com.quasetudogostoso.service;
 
-import model.Receita;
-import model.Usuario;
+import src.main.java.br.com.quasetudogostoso.model.Usuario;
 
 import java.util.List;
 
-public class ListarUsuariosService {
-
+public class UsuarioService {
     public void listar(List<Usuario> usuarios) {
         System.out.println("\n === Usuários ===");
         if (usuarios.isEmpty()) {
@@ -15,5 +13,9 @@ public class ListarUsuariosService {
         }
 
         for (Usuario user : usuarios) System.out.printf("ID: %d - %s | Data inscrição: %s %n", user.getIdUsuario(), user.getNomeUsuario(), user.getDataInscricao());
+    }
+
+    public Usuario adicionar(String nome, String email, String dataNasc, int cep, char genero, String senha) {
+        return null;
     }
 }

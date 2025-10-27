@@ -1,4 +1,6 @@
 package model;
+import src.main.java.br.com.quasetudogostoso.model.ReceitaIngrediente;
+
 import java.util.ArrayList;
 import java.util.List;
 

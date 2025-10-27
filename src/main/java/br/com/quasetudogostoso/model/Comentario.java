@@ -1,4 +1,7 @@
 package model;
+
+import src.main.java.br.com.quasetudogostoso.model.Usuario;
+
 public class Comentario {
     private int nota;
     private String dataComentario;
