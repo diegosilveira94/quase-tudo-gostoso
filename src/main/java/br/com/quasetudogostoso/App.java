@@ -17,16 +17,24 @@ public class App {
 
         ReceitaService receitaService = new ReceitaService();
         UsuarioService usuarioService = new UsuarioService();
-        service.IngredienteService ingredienteService = new service.IngredienteService();
+        IngredienteService ingredienteService = new IngredienteService();
+        ComentarioService comentarioService = new ComentarioService();
 
         ReceitaController receitaController = new ReceitaController(receitaService);
+        UsuarioController usuarioController = new UsuarioController(usuarioService)
+        IngredienteController ingredienteController = new IngredienteController(ingredienteService);
+        ComentarioController comentarioController = new ComentarioController(comentarioService);
 
         server.createContext("/receitas", receitaController);
-        server.createContext("/usuario", (HttpHandler) usuarioService);
-        server.createContext("/ingrediente", (HttpHandler) ingredienteService);
+        server.createContext("/usuario", usuarioController);
+        server.createContext("/ingrediente", ingredienteController);
+        server.createContext("/comentario", comentarioController);
         server.setExecutor(null);
         server.start();
 
         System.out.println("Servidor iniciado em http://localhost:" + PORT + "/receitas");
+        System.out.println("Servidor iniciado em http://localhost:" + PORT + "/usuario");
+        System.out.println("Servidor iniciado em http://localhost:" + PORT + "/ingrediente");
+        System.out.println("Servidor finalizado em http://localhost:" + PORT + "/comentario");
     }
 }
