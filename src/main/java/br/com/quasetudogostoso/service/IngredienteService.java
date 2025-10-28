@@ -1,6 +1,6 @@
-package service;
+package src.main.java.br.com.quasetudogostoso.service;
 
-import model.Ingrediente;
+import src.main.java.br.com.quasetudogostoso.model.Ingrediente;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,17 +14,12 @@ public class IngredienteService {
         ingrediente.setIdIngrediente(contadorIdIngrediente);
         ingrediente.setIngrediente(nomeIngrediente);
         contadorIdIngrediente++;
+        ingredientes.add(ingrediente);
         return ingrediente;
     }
 
-    public void listar(List<Ingrediente> ingredientes) {
-        System.out.println("\n=== Ingredientes ===");
-        if (ingredientes.isEmpty()) {
-            System.out.println("Nenhum ingrediente cadastrado.");
-            return;
-        }
-
-        for (Ingrediente i : ingredientes) System.out.printf("ID: %d - %s %n", i.getIdIngrediente(), i.getIngrediente());
+    public List<Ingrediente> listar() {
+        return ingredientes;
     }
 }
 

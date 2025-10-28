@@ -3,8 +3,12 @@ package src.main.java.br.com.quasetudogostoso;
 import com.sun.net.httpserver.HttpServer;
 import src.main.java.br.com.quasetudogostoso.controller.ReceitaController;
 import src.main.java.br.com.quasetudogostoso.controller.UsuarioController;
+import src.main.java.br.com.quasetudogostoso.service.IngredienteService;
 import src.main.java.br.com.quasetudogostoso.service.ReceitaService;
 import src.main.java.br.com.quasetudogostoso.service.UsuarioService;
+//import src.main.java.br.com.quasetudogostoso.controller.ComentarioController;
+import src.main.java.br.com.quasetudogostoso.service.ComentarioService;
+import src.main.java.br.com.quasetudogostoso.controller.IngredienteController;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -17,18 +21,18 @@ public class App {
 
         ReceitaService receitaService = new ReceitaService();
         UsuarioService usuarioService = new UsuarioService();
-        service.IngredienteService ingredienteService = new service.IngredienteService();
-        service.ComentarioService comentarioService = new service.ComentarioService();
+        IngredienteService ingredienteService = new IngredienteService();
+        ComentarioService comentarioService = new ComentarioService();
 
         ReceitaController receitaController = new ReceitaController(receitaService);
-        UsuarioController usuarioController = new UsuarioController(usuarioService)
+        UsuarioController usuarioController = new UsuarioController(usuarioService);
         IngredienteController ingredienteController = new IngredienteController(ingredienteService);
-        ComentarioController comentarioController = new ComentarioController(comentarioService);
+//        ComentarioController comentarioController = new ComentarioController(comentarioService);
 
         server.createContext("/receitas", receitaController);
         server.createContext("/usuario", usuarioController);
         server.createContext("/ingrediente", ingredienteController);
-        server.createContext("/comentario", comentarioController);
+//        server.createContext("/comentario", comentarioController);
         server.setExecutor(null);
         server.start();
 

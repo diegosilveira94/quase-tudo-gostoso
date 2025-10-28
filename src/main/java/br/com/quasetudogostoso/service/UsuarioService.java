@@ -26,13 +26,13 @@ public class UsuarioService {
 
     public Usuario adicionar(String nome, String email, String dataNasc, int cep, String genero, String senha) {
         Usuario u = new Usuario();
-        u.getIdUsuario(contador++);
-        u.getNomeUsuario(nome);
-        u.getEmail(email);
-        u.getDataNasc(dataNasc);
-        u.getCep(cep);
-        u.getGenero(genero);
-        u.getSenha(senha);
+        u.setIdUsuario(contador++);
+        u.setNomeUsuario(nome);
+        u.setEmail(email);
+        u.setDataNasc(dataNasc);
+        u.setCep(cep);
+        u.setGenero(genero);
+        u.setSenha(senha);
         usuarios.add(u);
         return u;
     }

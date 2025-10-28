@@ -14,7 +14,7 @@ import java.util.List;
 public class UsuarioController implements HttpHandler {
     private final UsuarioService service;
 
-    public UsuarioControler(UsuarioService service) {
+    public UsuarioController(UsuarioService service) {
         this.service = service;
     }
 
@@ -43,7 +43,7 @@ public class UsuarioController implements HttpHandler {
         for (int i = 0; i < usuarios.size(); i++) {
             Usuario u = usuarios.get(i);
             json.append(String.format(
-                    "{\"id\":%d,\"nome\":\"%s\",\"email\":\"%s\",\"dataNasc\":\"%s\",\"cep\":\"%d\",\"genero\":\"%c\",\"senha\":\"%s\"}",
+                    "{\"id\":%d,\"nome\":\"%s\",\"email\":\"%s\",\"dataNasc\":\"%s\",\"cep\":\"%d\",\"genero\":\"%s\",\"senha\":\"%s\"}",
                     u.getIdUsuario(), u.getNomeUsuario(), u.getEmail(), u.getDataNasc(), u.getCep(), u.getGenero(), u.getSenha()
             ));
             if (i < usuarios.size() - 1) json.append(",");
@@ -61,7 +61,7 @@ public class UsuarioController implements HttpHandler {
         InputStream is = exchange.getRequestBody();
         String body = new String(is.readAllBytes(), StandardCharsets.UTF_8);
 
-        // {"nome":"Diego","descricao":"Delicioso"}
+        // {"nome":"Diego","email":"diego@gmail.com","DataNasc":"05/09/1994","cep":89210040, "genero":"M","senha":"senha123"}
         String nome = body.replaceAll(".*\"nome\"\\s*:\\s*\"([^\"]+)\".*", "$1");
         String email = body.replaceAll(".*\"email\"\\s*:\\s*\"([^\"]+)\".*", "$1");
         String dataNasc = body.replaceAll(".*\"dataNasc\"\\s*:\\s*\"([^\"]+)\".*", "$1");

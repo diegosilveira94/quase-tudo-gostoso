@@ -12,10 +12,15 @@ public class Usuario {
     private String senha;
     private String senhaConfirmada;
     private String dataInscricao;
-    private List<model.Comentario> comentario = new ArrayList<>();
+    private List<Comentario> comentario = new ArrayList<>();
     private List<Receita> receitas = new ArrayList<>();
 
-    public int getIdUsuario(int i) {
+    public Usuario() {
+        this.comentario = new ArrayList<>();
+        this.receitas = new ArrayList<>();
+    }
+
+    public int getIdUsuario() {
         return idUsuario;
     }
 
@@ -23,7 +28,7 @@ public class Usuario {
         this.idUsuario = idUsuario;
     }
 
-    public String getNomeUsuario(String nome) {
+    public String getNomeUsuario() {
         return nomeUsuario;
     }
 
@@ -31,7 +36,7 @@ public class Usuario {
         this.nomeUsuario = nomeUsuario;
     }
 
-    public String getEmail(String email) {
+    public String getEmail() {
         return this.email;
     }
 
@@ -39,7 +44,7 @@ public class Usuario {
         this.email = email;
     }
 
-    public String getDataNasc(String dataNasc) {
+    public String getDataNasc() {
         return this.dataNasc;
     }
 
@@ -47,7 +52,7 @@ public class Usuario {
         this.dataNasc = dataNasc;
     }
 
-    public int getCep(int cep) {
+    public int getCep() {
         return this.cep;
     }
 
@@ -55,7 +60,7 @@ public class Usuario {
         this.cep = cep;
     }
 
-    public String getGenero(String genero) {
+    public String getGenero() {
         return this.genero;
     }
 
@@ -63,7 +68,7 @@ public class Usuario {
         this.genero = genero;
     }
 
-    public String getSenha(String senha) {
+    public String getSenha() {
         return this.senha;
     }
 
@@ -83,11 +88,11 @@ public class Usuario {
         this.dataInscricao = dataInscricao;
     }
 
-    public List<model.Comentario> getComentario() {
+    public List<Comentario> getComentario() {
         return comentario;
     }
 
-    public void setComentario(List<model.Comentario> comentario) {
+    public void setComentario(List<Comentario> comentario) {
         this.comentario = comentario;
     }
 

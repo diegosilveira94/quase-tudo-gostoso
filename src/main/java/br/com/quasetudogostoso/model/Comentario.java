@@ -1,16 +1,22 @@
 package src.main.java.br.com.quasetudogostoso.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Comentario {
     private int nota;
     private String dataComentario;
     private int idComentario;
     private Usuario usuario;
+    private List<Comentario> comentario;
 
-    public Comentario(int var1, String var2, int var3, Usuario var4) {
-        this.dataComentario = var2;
-        this.idComentario = var3;
-        this.nota = var1;
-        this.usuario = var4;
+    public Comentario() {
+        this.comentario = new ArrayList<>();
+    }
+    public Comentario(int nota, String dataComentario, Usuario usuario) {
+        this.dataComentario = dataComentario;
+        this.nota = nota;
+        this.usuario = usuario;
     }
 
     public int getNota() {
