@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <title>Cadastro</title>
+</head>
+
+<body>
+  <header>
+    <!-- Logo Quase Tudo Gostoso no NAV -->
+    <a href="#">
+      <img src="../assets/img/logo.png" alt="logo" height="50px" width="288px" />
+    </a>
+    <!-- Menu de navegação -->
+    <nav class="barra-de-navegação">
+      <a class="active" href="/index.html">Início</a>
+      <a class="active" href="pages/receitas.html">Receitas</a>
+      <a class="active" href="pages/sobre.html">Sobre Nós</a>
+      <a class="active" href="../pages/contato.html">Contato</a>
+    </nav>
+
+    <!-- icone de usuário -->
+    <div class="usuario-container">
+      <a href="pages/usuario.html">
+        <img src="../assets/img/icon-user.png" alt="icone-de-usuario" height="50px" width="auto" />
+      </a>
+    </div>
+  </header>
+  <main>
+    <section>
+      <form>
+        <fieldset>
+          <Legend>Dados Pessoais</Legend>
+          <label for="nome">Nome:*</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+          <label for="email">Email:*</label>
+          <input type="email" id="email" name="email" placeholder="exemplo@gmail.com" required>
+          <label for="cep">CEP:</label>
+          <input type="number" id="cep" name="cep" pattern="[0-9]{5}-?[0-9]{3}" title="Digite o CEP com 8 números"
+            placeholder="00000-000">
+        </fieldset>
+        <fieldset>
+          <legend>Gênero:</legend>
+          <label>
+            <input type="radio" name="genero" value="masculino">
+            Masculino
+          </label>
+          <label>
+            <input type="radio" name="genero" value="feminino">
+            Feminino
+          </label>
+        </fieldset>
+        <fieldset>
+          <legend>Senha</legend>
+          <label for="senha">Informe Sua Senha:*</label>
+          <input type="password" id="senha" placeholder="Informe mais de 8 caracteres">
+          <label for="senha-confirmada">Confirme Sua Senha:*</label>
+          <input type="password" id="senha-confirmada" placeholder="Confirme sua senha">
+        </fieldset>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

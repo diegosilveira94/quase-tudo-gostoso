@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <title>Página Inicial</title>
+</head>
+
+<body>
+  <header>
+    <!-- Logo Quase Tudo Gostoso no NAV -->
+    <a href="#">
+      <img src="assets/img/logo.png" alt="logo" height="50px" width="288px" />
+    </a>
+    <!-- Menu de navegação -->
+    <nav class="barra-de-navegação">
+      <a class="active" href="/index.html">Início</a>
+      <a href="pages/receitas.html">Receitas</a>
+      <a href="pages/sobre.html">Sobre Nós</a>
+      <a href="pages/contato.html">Contato</a>
+    </nav>
+
+    <!-- icone de usuário -->
+    <div class="usuario-container">
+      <a href="pages/usuario.html">
+        <img src="assets/img/icon-user.png" alt="icone-de-usuario" height="50px" width="auto" />
+      </a>
+    </div>
+  </header>
+  <!-- banner e sobre texto -->
+  <div class="root">
+    <div class="banner-container">
+      <img src="assets/img/cozinhar.jpg" alt="pessoa-cozinhando" width="auto" height="700px" />
+      <div class="texto1">Culinária com Paixão e sabor</div>
+      <div class="sub-texto">
+        Descubra um mundo de receitas deliciosas para cada ocasião, criadas
+        com amor e perfeição.
+      </div>
+      <button class="botao">Explorar receitas</button>
+    </div>
+    <!-- icone de pesquisa -->
+    <div class="pesquisa-container">
+      <button id="pesquisa-btn">🔍</button>
+      <input type="text" id="pesquisa-input" placeholder="Buscar receitas..." />
+    </div>
+    <main>
+      <section>
+        <h1>Receitas em Destaque</h1>
+        <p>Descubra as receitas favoritas da nossa comunidade e os pratos mais saborosos</p>
+      </section>
+    </main>
+
+
+    <footer>&copy;Diegasso</footer>
+  </div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
