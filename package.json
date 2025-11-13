@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "db:setup": "node src/config/setup.js",
+    "db:reset": "node src/config/setup.js"
   },
   "license": "MIT",
   "dependencies": {
