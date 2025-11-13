@@ -1,4 +1,4 @@
-import db from "../config/db";
+import db from "../config/db.js";
 
 const UserModel = {
   //criar novo usuario
@@ -14,6 +14,13 @@ const UserModel = {
       dataNascimento,
     ]);
     return { id: result.insertId, ...userData };
+  },
+
+  // listar todos os usuarios
+  findAll: async () => {
+    const query = "SELECT * FROM usuario";
+    const [rows] = await db.execute(query);
+    return rows;
   },
 
   // buscar usuario por email

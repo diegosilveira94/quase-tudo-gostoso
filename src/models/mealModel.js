@@ -1,4 +1,4 @@
-import db from "../config/db";
+import db from "../config/db.js";
 
 const MealModel = {
   // Criar novo tipo de refeição
