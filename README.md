@@ -4,9 +4,9 @@ Sistema de gerenciamento de receitas culinárias desenvolvido para as disciplina
 
 ## 👥 Equipe
 
-- [Nome do Aluno 1]
-- [Nome do Aluno 2]
-- [Nome do Aluno 3]
+- [Diego Silveira]
+- [Danilo Cesar]
+- [Arthur Henrique]
 
 ## 🛠️ Tecnologias
 
@@ -27,7 +27,7 @@ Sistema de gerenciamento de receitas culinárias desenvolvido para as disciplina
 1. **Clone o repositório**
 
 ```bash
-git clone [url-do-repositorio]
+git clone [https://github.com/diegosilveira94/quase-tudo-gostoso.git]
 cd quase-tudo-gostoso
 ```
 
@@ -71,13 +71,13 @@ yarn start
 
 6. **Acesse o sistema**
 
-- Abra: `http://localhost:3000/pages/cadastro-usuario.html`
+- Abra: `http://localhost:3000`
 
 ## 📝 Funcionalidades
 
-- Cadastro de Usuários
-- Cadastro de Categorias
-- Cadastro de Tipos de Refeições
+- Cadastro e listagem de Usuários
+- Cadastro e listagem de Categorias
+- Cadastro e listagem de Tipos de Refeições
 - API REST completa
 
 ## 📚 Endpoints
