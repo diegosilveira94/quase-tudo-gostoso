@@ -4,9 +4,9 @@ Sistema de gerenciamento de receitas culinárias desenvolvido para as disciplina
 
 ## 👥 Equipe
 
-- [Diego Silveira]
-- [Danilo Cesar]
-- [Arthur Henrique]
+- [Diego Silveira](https://github.com/diegosilveira94)
+- [Danilo Cesar](https://github.com/daniloz-c)
+- [Arthur Henrique](https://github.com/arthurhenriqueabreu)
 
 ## 🛠️ Tecnologias
 
