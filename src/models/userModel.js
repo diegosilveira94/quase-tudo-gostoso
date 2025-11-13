@@ -5,7 +5,7 @@ const UserModel = {
   async create(userData) {
     const { nome, email, senha, dataNascimento } = userData;
     const query =
-      "INSERT INTO users (nome, email, senha, data_nascimento) VALUES (?, ?, ?, ?)";
+      "INSERT INTO usuario (nome, email, senha, data_nascimento) VALUES (?, ?, ?, ?)";
 
     const [result] = await db.execute(query, [
       nome,
@@ -31,7 +31,7 @@ const UserModel = {
   },
   // buscar usuario por id
   findById: async (id) => {
-    const query = "SELECT * FROM usuario WHERE id_usuario = ?";
+    const query = "SELECT * FROM usuario WHERE idusuario = ?";
     const [rows] = await db.execute(query, [id]);
     return rows[0];
   },

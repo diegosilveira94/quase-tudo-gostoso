@@ -1,6 +1,5 @@
+import "dotenv/config";
 import express from "express";
-import dotenv from "dotenv";
-dotenv.config(); //carregar .env antes de importar as rotas
 import router from "./src/routes/routes.js";
 
 const app = express();

@@ -19,7 +19,7 @@ const CategoryModel = {
 
   // buscar categoria por id
   findById: async (id) => {
-    const query = "SELECT * FROM categoria WHERE id_categoria = ?";
+    const query = "SELECT * FROM categoria WHERE idcategoria = ?";
     const [rows] = await db.execute(query, [id]);
     return rows[0];
   },

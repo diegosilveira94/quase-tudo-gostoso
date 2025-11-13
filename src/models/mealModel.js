@@ -19,7 +19,7 @@ const MealModel = {
 
   // Buscar refeição por ID
   findById: async (id) => {
-    const query = "SELECT * FROM refeicao WHERE id_refeicao = ?";
+    const query = "SELECT * FROM refeicao WHERE idrefeicao = ?";
     const [rows] = await db.execute(query, [id]);
     return rows[0];
   },
