@@ -3,15 +3,25 @@ import db from "../config/db.js";
 const UserModel = {
   //criar novo usuario
   async create(userData) {
-    const { nome, email, senha, dataNascimento } = userData;
+    const { nome, email, senha, dataNascimento, cep, genero } = userData;
+    // A tabela `usuario` possui colunas `salt` e `uuid` que exigem
+    // valores não nulos segundo o script SQL original. Aqui preenchemos
+    // `salt` com string vazia e `uuid` com NULL quando não fornecidos.
+    const salt = userData.salt || "";
+    const uuid = userData.uuid || null;
+
     const query =
-      "INSERT INTO usuario (nome, email, senha, data_nascimento) VALUES (?, ?, ?, ?)";
+      "INSERT INTO usuario (nome, email, senha, salt, uuid, data_nascimento, cep, genero) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
     const [result] = await db.execute(query, [
       nome,
       email,
       senha,
+      salt,
+      uuid,
       dataNascimento,
+      cep || null,
+      genero || null,
     ]);
     return { id: result.insertId, ...userData };
   },

@@ -11,8 +11,12 @@ import {
   cadastrarRefeicao,
   listarRefeicoes,
 } from "../controllers/mealController.js";
+import { testarConexaoDB } from "../controllers/conexaoController.js";
 
 const router = express.Router();
+
+//rotas de conexão ao banco de dados
+router.post("/conexao/testar", testarConexaoDB);
 
 //rotas usuários
 router.post("/cadastrar-usuario", cadastrarUsuario);

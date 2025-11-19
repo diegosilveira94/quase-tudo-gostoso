@@ -2,13 +2,16 @@ import UserModel from "../models/userModel.js";
 
 export const cadastrarUsuario = async (req, res) => {
   try {
-    const { nome, email, senha, dataNascimento } = req.body;
+    const { nome, email, senha, dataNascimento, cep, genero } = req.body;
 
-    //validação
+    // validação básica
     if (!nome || !email || !senha) {
-      return res
-        .status(400)
-        .json({ erro: "Nome, email e senha são obrigatórios!" });
+      return res.status(400).json({ erro: "Nome, email e senha são obrigatórios!" });
+    }
+
+    // validação opcional do CEP (somente números)
+    if (cep && !/^[0-9]+$/.test(String(cep))) {
+      return res.status(400).json({ erro: "CEP inválido. Use apenas números." });
     }
 
     const usuario = await UserModel.create({
@@ -16,6 +19,8 @@ export const cadastrarUsuario = async (req, res) => {
       email,
       senha,
       dataNascimento,
+      cep,
+      genero,
     });
 
     res.status(201).json({
@@ -24,7 +29,7 @@ export const cadastrarUsuario = async (req, res) => {
     });
   } catch (erro) {
     console.error("Erro ao cadastrar usuário:", erro);
-    res.status(500).json({ erro: "Erro ao cadastrar usuário" });
+    res.status(500).json({ erro: erro.message || "Erro ao cadastrar usuário" });
   }
 };
 
