@@ -1,83 +1,150 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="/css/style.css" />
-        <title>Página Inicial</title>
-    </head>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quase Tudo Gostoso</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/index.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="src/logo.png">
+      <h1>
+      QuaseTudoGostoso
+      </h1>
+    </div>
+    <div class="menu">
+      <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Receitas</a></li>
+      <li><a href="#">Usuário</a></li>
+      <li><a href="#">Administração</a></li>
+    </ul>
+    </div>
+    <div class="pesquisa">
+      <input type="text" placeholder="Buscar Receitas">
+      <img src="src/lupa.png" alt="Buscar" class="icone-busca">
+    </div>
+  </header>
 
-    <body>
-        <header>
-            <!-- Logo Quase Tudo Gostoso no NAV -->
-            <a class="logo-div" href="#">
-                <img
-                    class="logo"
-                    src="assets/img/logo.png"
-                    alt="logo"
-                    height="50px"
-                    width="288px"
-                />
-            </a>
-            <!-- Menu de navegação -->
-            <nav class="barra-de-navegação">
-                <a class="active" href="/index.html">Início</a>
-                <a href="/pages/receitas.html">Receitas</a>
-                <a href="/pages/sobre.html">Sobre Nós</a>
-                <a href="/pages/contato.html">Contato</a>
-                <a href="/pages/conexao-db.html">Login</a>
-            </nav>
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Culinária com Paixão e Sabor</h2>
+      <p>Descubra um mundo de receitas deliciosas para cada ocasião, criadas com amor e perfeição.</p>
+      <a href="#" class="btn-hero">Explorar Receitas</a>
+    </div>
+  </section>
 
-            <!-- icone de usuário -->
-            <div class="usuario-container">
-                <a href="/pages/usuario.html">
-                    <img
-                        src="assets/img/icon-user.png"
-                        alt="icone-de-usuario"
-                        height="50px"
-                        width="auto"
-                    />
-                </a>
-            </div>
-        </header>
-        <!-- banner e sobre texto -->
-        <div class="root">
-            <div class="banner-container">
-                <img
-                    src="assets/img/cozinhar.jpg"
-                    alt="pessoa-cozinhando"
-                    width="auto"
-                    height="700px"
-                />
-                <div class="texto1">Culinária com Paixão e sabor</div>
-                <div class="sub-texto">
-                    Descubra um mundo de receitas deliciosas para cada ocasião,
-                    criadas com amor e perfeição.
-                </div>
-                <button class="botao">Explorar receitas</button>
-            </div>
-            <!-- icone de pesquisa -->
-            <div class="pesquisa-container">
-                <button id="pesquisa-btn">🔍</button>
-                <input
-                    type="text"
-                    id="pesquisa-input"
-                    placeholder="Buscar receitas..."
-                />
-            </div>
-            <main>
-                <section>
-                    <h1>Receitas em Destaque</h1>
-                    <p>
-                        Descubra as receitas favoritas da nossa comunidade e os
-                        pratos mais saborosos
-                    </p>
-                </section>
-            </main>
+  <section class="destaques">
+    <h2>Receitas em Destaque</h2>
+    <p>Descubra as favoritas da nossa comunidade e os pratos mais saborosos.</p>
 
-            <footer>&copy;Diegasso</footer>
+    <div class="grid-recipes">
+
+      <!-- Card 01 -->
+      <div class="recipe-card">
+        <img src="src/lasanha.jpg" alt="Lasanha à Bolonhesa Clássica">
+        <div class="card-info">
+          <h3>Lasanha à Bolonhesa Clássica</h3>
+          <span class="tag">Prato Principal</span>
         </div>
+      </div>
 
-        <script src="/js/script.js"></script>
-    </body>
+      <!-- Card 02 -->
+      <div class="recipe-card">
+        <img src="src/petit-gateau.jpg" alt="Petit Gateau de Chocolate">
+        <div class="card-info">
+          <h3>Petit Gateau de Chocolate</h3>
+          <span class="tag">Sobremesa</span>
+        </div>
+      </div>
+
+      <!-- Card 03 -->
+      <div class="recipe-card">
+        <img src="src/salada.webp" alt="Salada Caprese Fresca">
+        <div class="card-info">
+          <h3>Salada Caprese Fresca</h3>
+          <span class="tag">Salada</span>
+        </div>
+      </div>
+
+      <!-- Card 04 -->
+      <div class="recipe-card">
+        <img src="src/pizza-de-pepperoni-caseira.webp" alt="Pizza Caseira de Pepperoni">
+        <div class="card-info">
+          <h3>Pizza Caseira de Pepperoni</h3>
+          <span class="tag">Jantar Rápido</span>
+        </div>
+      </div>
+
+      <!-- Card 05 -->
+      <div class="recipe-card">
+        <img src="src/frango-assado-com-ervas.webp" alt="Frango Assado com Ervas">
+        <div class="card-info">
+          <h3>Frango Assado com Ervas</h3>
+          <span class="tag">Aves</span>
+        </div>
+      </div>
+
+      <!-- Card 06 -->
+      <div class="recipe-card">
+        <img src="src/risoto.webp" alt="Risoto de Cogumelos Cremoso">
+        <div class="card-info">
+          <h3>Risoto de Cogumelos Cremoso</h3>
+          <span class="tag">Prato Principal</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="categorias">
+    <h2>Explore por Categoria</h2>
+    <p>Encontre a receita perfeita para o seu humor ou necessidade.</p>
+
+    <div class="categoria-grid">
+
+      <!-- Categoria 1 -->
+      <div class="categoria-card">
+        <img src="src/prato.png" alt="Pratos Principais">
+        <h3>Pratos Principais</h3>
+        <p>Receitas substanciosas para qualquer refeição.</p>
+      </div>
+
+      <!-- Categoria 2 -->
+      <div class="categoria-card">
+        <img src="src/sobremesa.png" alt="Sobremesas">
+        <h3>Sobremesas</h3>
+        <p>Doces para adoçar o seu dia.</p>
+      </div>
+
+      <!-- Categoria 3 -->
+      <div class="categoria-card">
+        <img src="src/vegano.png" alt="Vegano">
+        <h3>Vegano</h3>
+        <p>Opções deliciosas e nutritivas.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+
+      <div class="footer-links">
+        <a href="#">Navegação</a>
+        <a href="#">Recursos</a>
+      </div>
+
+      <div class="footer-social">
+        <a href="#"><img src="src/facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="src/instagram.png" alt="Instagram"></a>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
 </html>
