@@ -1,0 +1,199 @@
+/* Estilos para página de receitas */
+
+.titulo-principal {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.titulo-principal h1 {
+  font-size: 32px;
+  color: #333;
+}
+
+/* Seção de Filtros */
+.filtro-section {
+  background-color: #f9f5f0;
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 900px;
+  border-radius: 10px;
+}
+
+.filtro-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filtro-header h2 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.filtro-header p {
+  color: #666;
+  font-size: 14px;
+}
+
+.filtro-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filtro-container select {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: white;
+  cursor: pointer;
+  min-width: 180px;
+}
+
+.botoes-filtro {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.botoes-filtro button {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#aplicar-filtros {
+  background-color: rgb(210, 117, 4);
+  color: white;
+}
+
+#aplicar-filtros:hover {
+  background-color: rgb(190, 100, 0);
+}
+
+#limpar-filtros {
+  background-color: white;
+  color: rgb(210, 117, 4);
+  border: 2px solid rgb(210, 117, 4);
+}
+
+#limpar-filtros:hover {
+  background-color: #f9f5f0;
+}
+
+/* Grid de Receitas */
+.receitas-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card de Receita */
+.receita-card {
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.receita-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.receita-imagem {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.receita-conteudo {
+  padding: 15px;
+}
+
+.receita-titulo {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: bold;
+}
+
+.receita-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.receita-info label {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.categoria-label {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.dificuldade-label {
+  background-color: #fff3e0;
+  color: #f57c00;
+}
+
+.tempo-label {
+  background-color: #f3e5f5;
+  color: #7b1fa2;
+}
+
+/* Campo de busca no header */
+.busca-container input {
+  padding: 8px 15px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 14px;
+  width: 200px;
+}
+
+/* Mensagem quando não há receitas */
+.sem-receitas {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-size: 18px;
+  grid-column: 1 / -1;
+}
+
+/* Footer */
+footer {
+  margin-top: 50px;
+}
+
+.footer-conteudo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  color: white;
+}
+
+.redes-sociais {
+  display: flex;
+  gap: 15px;
+}
+
+.redes-sociais a {
+  text-decoration: none;
+  font-size: 24px;
+}
