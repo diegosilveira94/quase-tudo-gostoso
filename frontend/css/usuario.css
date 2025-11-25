@@ -1,0 +1,181 @@
+/* ===== ESTILOS DA PÁGINA DE USUÁRIO ===== */
+
+.usuario-main {
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #fff9f5 0%, #fffdf9 100%);
+}
+
+.usuario-container-principal {
+  background: white;
+  padding: 50px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+}
+
+.usuario-container-principal h1 {
+  font-size: 28px;
+  color: #2a2a2a;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.usuario-subtitulo {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* Tabs */
+.tabs-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 12px 20px;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #666;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+  color: #d9793e;
+}
+
+.tab-btn.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #d9793e;
+}
+
+.tab-btn:hover {
+  color: #d9793e;
+}
+
+/* Formulários */
+.form-container {
+  animation: fadeIn 0.3s ease;
+}
+
+.form-container.hidden {
+  display: none;
+}
+
+.form-container h2 {
+  font-size: 22px;
+  color: #2a2a2a;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #f0f0f0;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #d9793e;
+  box-shadow: 0 0 0 3px rgba(217, 121, 62, 0.1);
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 14px;
+  background: #d9793e;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn-submit:hover {
+  background: #c96527;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(217, 121, 62, 0.3);
+}
+
+.form-footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.link-recuperar {
+  color: #666;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.link-recuperar span {
+  color: #d9793e;
+  font-weight: 500;
+}
+
+.link-recuperar:hover span {
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .usuario-container-principal {
+    padding: 30px 25px;
+  }
+
+  .usuario-container-principal h1 {
+    font-size: 24px;
+  }
+
+  .form-container h2 {
+    font-size: 20px;
+  }
+}

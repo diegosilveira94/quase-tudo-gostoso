@@ -12,26 +12,39 @@
 <body>
   <header>
     <!-- Logo Quase Tudo Gostoso no NAV -->
-    <a href="/index.html">
-      <img src="../assets/img/logo.png" alt="logo" height="50px" width="288px" />
+    <a class="logo-div" href="../index.html">
+      <img class="logo" src="../assets/img/logo.png" alt="logo" height="50px" width="288px" />
     </a>
     <!-- Menu de navegação -->
     <nav class="barra-de-navegação">
-      <a href="/index.html">Início</a>
-      <a class="active" href="/pages/receitas.html">Receitas</a>
-      <a href="/pages/sobre.html">Sobre Nós</a>
-      <a href="/pages/contato.html">Contato</a>
+      <a href="../index.html">Home</a>
+      <a class="active" href="receitas.html">Receitas</a>
+      <a href="usuario.html">Usuário</a>
+      <a href="admin.html">Administração</a>
     </nav>
 
-    <!-- campo de busca -->
-    <div class="busca-container">
-      <input type="text" id="busca-receitas" placeholder="🔍 Buscar receitas..." />
+    <!-- Busca no header -->
+    <div class="header-busca">
+      <input type="text" placeholder="Buscar receitas..." id="busca-header" />
+      <button>🔍</button>
+    </div>
+
+    <!-- icone de usuário -->
+    <div class="usuario-container">
+      <a href="usuario.html">
+        <img src="../assets/img/icon-user.png" alt="icone-de-usuario" height="50px" width="auto" />
+      </a>
     </div>
   </header>
   <main>
     <!-- Título -->
     <div class="titulo-principal">
       <h1>Explore Nossas Receitas Deliciosas</h1>
+    </div>
+
+    <!-- Campo de busca local -->
+    <div class="busca-local-container">
+      <input type="text" id="busca-receitas" placeholder="🔍 Buscar receitas..." />
     </div>
 
     <!-- Seção de Filtros -->
@@ -73,12 +86,21 @@
   </main>
 
   <footer>
-    <div class="footer-conteudo">
-      <p>© 2024 Quase Tudo Gostoso</p>
+    <div class="footer-content">
+      <nav class="footer-nav">
+        <a href="../index.html">Navegação</a>
+        <a href="receitas.html">Receitas</a>
+      </nav>
+      <div class="footer-social">
+        <a href="#">f</a>
+        <a href="#">📷</a>
+      </div>
     </div>
-    </div>
+    <p>Feito com ❤️ Diegasso</p>
   </footer>
 
+  <script src="../js/receitas-data.js"></script>
+  <script src="../js/busca.js"></script>
   <script src="../js/receitas.js"></script>
 </body>
 

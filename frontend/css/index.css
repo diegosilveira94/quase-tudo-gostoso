@@ -1,4 +1,5 @@
 body {
+<<<<<<< HEAD
     font-family: 'Poppins', sans-serif;
     padding: 0px;
     margin: 0px;
@@ -17,6 +18,25 @@ header{
   list-style: none;  
   display: flex;       
   gap: 20px;               
+=======
+  font-family: "Poppins", sans-serif;
+  padding: 0px;
+  margin: 0px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 12px 20px;
+  justify-content: space-between;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+>>>>>>> 1e89bd360094aa01ac38db7b2ea2ecdc0836cfb2
   margin: 0;
   padding: 0;
 }
@@ -29,6 +49,7 @@ header{
 }
 
 .menu a:hover {
+<<<<<<< HEAD
   color: #a56a38; 
   transition: 0.2s;
 }
@@ -53,10 +74,36 @@ header{
     font-style: italic;
     font-weight: bold;
     font-family: 'Nunito', sans-serif;
+=======
+  color: #a56a38;
+  transition: 0.2s;
+}
+
+/* Logo styles */
+.logo {
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+.logo h1 {
+  margin-left: 10px;
+  font-size: 24px;
+  color: #ec822a;
+  font-style: italic;
+  font-weight: bold;
+  font-family: "Nunito", sans-serif;
+>>>>>>> 1e89bd360094aa01ac38db7b2ea2ecdc0836cfb2
 }
 
 /* Pesquisa styles */
 .pesquisa {
+<<<<<<< HEAD
     position: relative;
     display: flex;
     align-items: center;
@@ -80,11 +127,35 @@ header{
     height: 16px;
     opacity: 0.7;
     pointer-events: none;
+=======
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.pesquisa input {
+  padding: 5px 5px 5px 35px;
+  border: 1px solid #cfcfcf;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #ffffff;
+}
+
+.icone-busca {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 16px;
+  opacity: 0.7;
+  pointer-events: none;
+>>>>>>> 1e89bd360094aa01ac38db7b2ea2ecdc0836cfb2
 }
 
 /* Hero Section */
 
 .hero {
+<<<<<<< HEAD
     height: 450px;                          /* altura da seção */
     background-image: url("../src/hero.jpg");  /* coloque sua imagem */
     background-size: cover;                 /* faz preencher a área */
@@ -136,6 +207,59 @@ header{
 
 .btn-hero:hover {
     background-color: #c86848;
+=======
+  height: 450px; /* altura da seção */
+  background-image: url("../src/hero.jpg"); /* coloque sua imagem */
+  background-size: cover; /* faz preencher a área */
+  background-position: center; /* centraliza */
+  position: relative; /* permite overlay */
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.65); /* camada escura suave */
+}
+
+.hero-text {
+  position: relative; /* fica acima do overlay */
+  color: rgb(0, 0, 0);
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+.hero-text h2 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #2c1810; /* preto suave */
+  margin-top: 0;
+}
+
+.hero-text p {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto 25px auto;
+  color: #2c1810; /* mesma cor */
+  line-height: 1.6;
+}
+
+.btn-hero {
+  background-color: #e07856;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn-hero:hover {
+  background-color: #c86848;
+>>>>>>> 1e89bd360094aa01ac38db7b2ea2ecdc0836cfb2
 }
 
 /* ================================
@@ -143,6 +267,7 @@ header{
 =================================== */
 
 .destaques {
+<<<<<<< HEAD
     text-align: center;
     padding: 70px 0;
     background-color: #ffffff;
@@ -160,6 +285,25 @@ header{
     color: #5C4033;
     margin-bottom: 50px;
     line-height: 1.6;
+=======
+  text-align: center;
+  padding: 70px 0;
+  background-color: #ffffff;
+}
+
+.destaques h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #2c1810;
+}
+
+.destaques p {
+  font-size: 16px;
+  color: #5c4033;
+  margin-bottom: 50px;
+  line-height: 1.6;
+>>>>>>> 1e89bd360094aa01ac38db7b2ea2ecdc0836cfb2
 }
 
 /* ================================
@@ -167,11 +311,19 @@ header{
 =================================== */
 
 .grid-recipes {
+<<<<<<< HEAD
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     width: 80%;
     margin: 0 auto;
+=======
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 80%;
+  margin: 0 auto;
+>>>>>>> 1e89bd360094aa01ac38db7b2ea2ecdc0836cfb2
 }
 
 /* ================================
@@ -179,43 +331,76 @@ header{
 =================================== */
 
 .recipe-card {
+<<<<<<< HEAD
     background: #ffffff;
     border-radius: 14px;
     overflow: hidden;
     box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     cursor: pointer;
+=======
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+>>>>>>> 1e89bd360094aa01ac38db7b2ea2ecdc0836cfb2
 }
 
 /* Hover elegante */
 .recipe-card:hover {
+<<<<<<< HEAD
     transform: translateY(-6px);
     box-shadow: 0px 6px 18px rgba(0,0,0,0.12);
+=======
+  transform: translateY(-6px);
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.12);
+>>>>>>> 1e89bd360094aa01ac38db7b2ea2ecdc0836cfb2
 }
 
 /* Imagem */
 .recipe-card img {
+<<<<<<< HEAD
     width: 100%;
     height: 180px;
     object-fit: cover;
+=======
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+>>>>>>> 1e89bd360094aa01ac38db7b2ea2ecdc0836cfb2
 }
 
 /* Conteúdo interno do card */
 .card-info {
+<<<<<<< HEAD
     padding: 18px;
     text-align: left;
+=======
+  padding: 18px;
+  text-align: left;
+>>>>>>> 1e89bd360094aa01ac38db7b2ea2ecdc0836cfb2
 }
 
 /* Título do card */
 .card-info h3 {
+<<<<<<< HEAD
     font-size: 17px;
     color: #2C1810;
     margin-bottom: 12px;
     font-weight: 600;
+=======
+  font-size: 17px;
+  color: #2c1810;
+  margin-bottom: 12px;
+  font-weight: 600;
+>>>>>>> 1e89bd360094aa01ac38db7b2ea2ecdc0836cfb2
 }
 
 /* Tag */
 .tag {
+<<<<<<< HEAD
     display: inline-block;
     background-color: #F5F0E8;
     padding: 6px 12px;
@@ -244,19 +429,60 @@ header{
     color: #5C4033;
     margin-top: 10px;
     margin-bottom: 50px;
+=======
+  display: inline-block;
+  background-color: #f5f0e8;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  color: #5c4033;
+  font-weight: 500;
+}
+
+/* ================================
+   SEÇÃO: Explore por Categoria
+=================================== */
+
+.categorias {
+  text-align: center;
+  padding: 80px 0;
+  background-color: #faf7f2; /* tom claro igual ao print */
+}
+
+.categorias h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2c1810;
+}
+
+.categorias p {
+  font-size: 16px;
+  color: #5c4033;
+  margin-top: 10px;
+  margin-bottom: 50px;
+>>>>>>> 1e89bd360094aa01ac38db7b2ea2ecdc0836cfb2
 }
 
 /* GRID */
 .categoria-grid {
+<<<<<<< HEAD
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
     width: 80%;
     margin: 0 auto;
+=======
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  width: 80%;
+  margin: 0 auto;
+>>>>>>> 1e89bd360094aa01ac38db7b2ea2ecdc0836cfb2
 }
 
 /* CARD */
 .categoria-card {
+<<<<<<< HEAD
     background: white;
     border-radius: 18px;
     padding: 35px 25px;
@@ -268,25 +494,52 @@ header{
 .categoria-card:hover {
     transform: translateY(-6px);
     box-shadow: 0px 6px 16px rgba(0,0,0,0.10);
+=======
+  background: white;
+  border-radius: 18px;
+  padding: 35px 25px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s ease;
+}
+
+.categoria-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.1);
+>>>>>>> 1e89bd360094aa01ac38db7b2ea2ecdc0836cfb2
 }
 
 /* Icone */
 .categoria-card img {
+<<<<<<< HEAD
     height: 55px;
     margin-bottom: 18px;
     filter: hue-rotate(0deg) brightness(1) saturate(1.6);
+=======
+  height: 55px;
+  margin-bottom: 18px;
+  filter: hue-rotate(0deg) brightness(1) saturate(1.6);
+>>>>>>> 1e89bd360094aa01ac38db7b2ea2ecdc0836cfb2
 }
 
 /* Título */
 .categoria-card h3 {
+<<<<<<< HEAD
     font-size: 18px;
     font-weight: 700;
     color: #2C1810;
     margin-bottom: 8px;
+=======
+  font-size: 18px;
+  font-weight: 700;
+  color: #2c1810;
+  margin-bottom: 8px;
+>>>>>>> 1e89bd360094aa01ac38db7b2ea2ecdc0836cfb2
 }
 
 /* Subtexto */
 .categoria-card p {
+<<<<<<< HEAD
     font-size: 14px;
     color: #5C4033;
 }
@@ -330,3 +583,36 @@ header{
 .footer-social a img:hover {
     opacity: 0.7;
 }
+=======
+  font-size: 14px;
+  color: #5c4033;
+}
+
+/* ================================
+   FOOTER
+=================================== */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  background-color: #d87800;
+  padding: 25px 0;
+  margin-top: 60px;
+  color: white;
+  text-align: center;
+}
+.footer-content {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  text-align: center;
+}
+
+.footer-content {
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+>>>>>>> 1e89bd360094aa01ac38db7b2ea2ecdc0836cfb2

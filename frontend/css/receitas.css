@@ -1,5 +1,27 @@
 /* Estilos para página de receitas */
 
+/* Container da busca local */
+.busca-local-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.busca-local-container input {
+  width: 100%;
+  padding: 15px 20px;
+  border: 2px solid #f0f0f0;
+  border-radius: 30px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.busca-local-container input:focus {
+  border-color: #d9793e;
+  box-shadow: 0 0 0 3px rgba(217, 121, 62, 0.1);
+}
+
 .titulo-principal {
   text-align: center;
   margin: 30px 0;
