@@ -3,28 +3,120 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      .h1 {
+        display: flex;
+        justify-content: center;
+      }
+      article {
+        display: flex;
+        background-color: #2196f3;
+        flex-direction: column;
+        align-content: flex-start;
+        width: 150px;
+        border-radius: 20px;
+      }
+      .articles-container {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        padding: 20px;
+      }
+      label.categoria {
+      }
+      .article__image__container > img {
+        width: 100%;
+        height: auto;
+        border-radius: 20px 20px 0px 0px;
+      }
+      .article__conteudo__container {
+        padding: 15px;
+      }
+    </style>
     <title>Receitas</title>
   </head>
   <body>
     <header>
       <!-- Logo Quase Tudo Gostoso no NAV -->
       <a href="#">
-        <img src="#" alt="logo" />
+        <img
+          src="../assets/img/logo.png"
+          alt="logo"
+          height="50px"
+          width="288px"
+        />
       </a>
       <!-- Menu de navegação -->
       <nav class="barra-de-navegação">
         <a class="active" href="/index.html">Início</a>
-        <a class="active" href="/pages/sobre.html">Receitas</a>
+        <a class="active" href="/pages/receitas.html">Receitas</a>
         <a class="active" href="/pages/sobre.html">Sobre Nós</a>
-        <a class="active" href="pages/contato.html">Contato</a>
+        <a class="active" href="/pages/contato.html">Contato</a>
       </nav>
 
       <!-- icone de usuário -->
-      <div class="usuario-container">
-        <a href="/pages/usuario.html">👤</a>
+      <div>
+        <input type="text" placeholder="🔍Buscar receitas..." />
       </div>
     </header>
+    <main>
+      <!-- Título -->
+      <div>
+        <h1>Explore Nossas Receitas Deliciosas</h1>
+      </div>
+      <!-- Campo de filtro -->
+      <div>
+        <div>
+          <h2>Filtre suas Receitas</h2>
+        </div>
+        <div>
+          <h3>Encontre a receita perfeita para qualquer ocasião</h3>
+        </div>
+        <div>
+          <input type="text" placeholder="Todas as Categorias" />
+          <input type="text" placeholder="Qualquer dificuldade" />
+          <input type="text" placeholder="Qualquer Tempo" />
+        </div>
+        <div>
+          <button>Aplicar Filtros</button>
+          <button>Limpar Filtros</button>
+        </div>
+      </div>
+      <div class="articles-container">
+        <article>
+          <div class="article__image__container">
+            <img src="../assets/img/lasanha.png" alt="" />
+          </div>
+          <div class="article__conteudo__container">
+            <div>
+              <h2>Lasanha à Bolonhesa</h2>
+            </div>
+            <div>
+              <label class="categoria">Pratos Principais</label>
+              <label class="dificuldade">Médio</label>
+              <label class="tempo_preparo">+/- 60min</label>
+            </div>
+          </div>
+        </article>
+
+        <article>
+          <h2>Mozilla Firefox</h2>
+          <p>
+            Mozilla Firefox is an open-source web browser developed by Mozilla.
+            Firefox has been the second most popular web browser since January,
+            2018.
+          </p>
+        </article>
+        <article>
+          <h2>Microsoft Edge</h2>
+          <p>
+            Microsoft Edge is a web browser developed by Microsoft, released in
+            2015. Microsoft Edge replaced Internet Explorer.
+          </p>
+        </article>
+      </div>
+    </main>
     <script src="/js/script.js"></script>
   </body>
 </html>
