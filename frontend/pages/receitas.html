@@ -1,273 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="/css/style.css" />
-        <title>Receitas</title>
-    </head>
-    <body>
-        <header>
-            <!-- Logo Quase Tudo Gostoso no NAV -->
-            <a class="logo-div" href="/">
-                <img
-                    class="logo"
-                    src="/assets/img/logo.png"
-                    alt="logo"
-                    height="50px"
-                    width="288px"
-                />
-            </a>
-            <!-- Menu de navegação -->
-            <nav class="barra-de-navegação">
-                <a href="/index.html">Início</a>
-                <a class="active" href="/pages/receitas.html">Receitas</a>
-                <a href="/pages/sobre.html">Sobre Nós</a>
-                <a href="/pages/contato.html">Contato</a>
-            </nav>
 
-            <!-- Busca no header -->
-            <div class="header-busca">
-                <input
-                    type="text"
-                    placeholder="Buscar receitas..."
-                    id="busca-header"
-                />
-                <button>🔍</button>
-            </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/receitas.css" />
+  <title>Receitas</title>
+</head>
 
-            <!-- icone de usuário -->
-            <div class="usuario-container">
-                <a href="/pages/usuario.html">
-                    <img
-                        src="/assets/img/icon-user.png"
-                        alt="icone-de-usuario"
-                        height="50px"
-                        width="auto"
-                    />
-                </a>
-            </div>
-        </header>
+<body>
+  <header>
+    <!-- Logo Quase Tudo Gostoso no NAV -->
+    <a href="/index.html">
+      <img src="../assets/img/logo.png" alt="logo" height="50px" width="288px" />
+    </a>
+    <!-- Menu de navegação -->
+    <nav class="barra-de-navegação">
+      <a href="/index.html">Início</a>
+      <a class="active" href="/pages/receitas.html">Receitas</a>
+      <a href="/pages/sobre.html">Sobre Nós</a>
+      <a href="/pages/contato.html">Contato</a>
+    </nav>
 
-        <main class="receitas-main">
-            <!-- Título -->
-            <section class="receitas-titulo">
-                <h1>Explore Nossas Receitas Deliciosas</h1>
-            </section>
+    <!-- campo de busca -->
+    <div class="busca-container">
+      <input type="text" id="busca-receitas" placeholder="🔍 Buscar receitas..." />
+    </div>
+  </header>
+  <main>
+    <!-- Título -->
+    <div class="titulo-principal">
+      <h1>Explore Nossas Receitas Deliciosas</h1>
+    </div>
 
-            <!-- Filtros -->
-            <section class="filtros-section">
-                <h2>Filtre suas Receitas</h2>
-                <p>Encontre a receita perfeita para qualquer ocasião.</p>
+    <!-- Seção de Filtros -->
+    <section class="filtro-section">
+      <div class="filtro-header">
+        <h2>Filtre suas Receitas</h2>
+        <p>Encontre a receita perfeita para qualquer ocasião</p>
+      </div>
+      <div class="filtro-container">
+        <select id="filtro-categoria">
+          <option value="">Todas as Categorias</option>
+          <option value="Pratos Principais">Pratos Principais</option>
+          <option value="Sobremesas">Sobremesas</option>
+          <option value="Saladas">Saladas</option>
+          <option value="Lanches">Lanches</option>
+        </select>
+        <select id="filtro-dificuldade">
+          <option value="">Qualquer Dificuldade</option>
+          <option value="Fácil">Fácil</option>
+          <option value="Médio">Médio</option>
+          <option value="Difícil">Difícil</option>
+        </select>
+        <select id="filtro-tempo">
+          <option value="">Qualquer Tempo</option>
+          <option value="30">Até 30 min</option>
+          <option value="60">Até 60 min</option>
+          <option value="90">Mais de 60 min</option>
+        </select>
+      </div>
+      <div class="botoes-filtro">
+        <button id="limpar-filtros">Limpar Filtros</button>
+      </div>
+    </section>
 
-                <div class="filtros-container">
-                    <div class="filtro-grupo">
-                        <label>Categoria</label>
-                        <select id="categoria">
-                            <option>Todas as Categorias</option>
-                        </select>
-                    </div>
+    <!-- Grid de Receitas -->
+    <section class="receitas-container" id="receitas-container">
+      <!-- As receitas serão carregadas aqui via JavaScript -->
+    </section>
+  </main>
 
-                    <div class="filtro-grupo">
-                        <label>Dificuldade</label>
-                        <select id="dificuldade">
-                            <option>Qualquer Dificuldade</option>
-                            <option>Fácil</option>
-                            <option>Médio</option>
-                            <option>Difícil</option>
-                        </select>
-                    </div>
+  <footer>
+    <div class="footer-conteudo">
+      <p>© 2024 Quase Tudo Gostoso</p>
+    </div>
+    </div>
+  </footer>
 
-                    <div class="filtro-grupo">
-                        <label>Tempo de Preparo</label>
-                        <select id="tempo">
-                            <option>Qualquer Tempo</option>
-                            <option>Menos de 15 min</option>
-                            <option>15-30 min</option>
-                            <option>30-60 min</option>
-                            <option>Mais de 60 min</option>
-                        </select>
-                    </div>
+  <script src="../js/receitas.js"></script>
+</body>
 
-                    <button class="btn-filtrar">Aplicar Filtros</button>
-                    <button class="btn-limpar">Limpar Filtros</button>
-                </div>
-            </section>
-
-            <!-- Grid de receitas -->
-            <section class="receitas-grid">
-                <div class="receita-card">
-                    <img
-                        src="/assets/img/lasanha.jpg"
-                        alt="Lasanha à Bolonhesa Clássica"
-                    />
-                    <h3>Lasanha à Bolonhesa Clássica</h3>
-                    <div class="receita-info">
-                        <span class="dificuldade">Médio</span>
-                        <span class="tempo">⏱ 80 min</span>
-                    </div>
-                </div>
-
-                <div class="receita-card">
-                    <img
-                        src="/assets/img/mousse.jpg"
-                        alt="Mousse de Chocolate Cremosa"
-                    />
-                    <h3>Mousse de Chocolate Cremosa</h3>
-                    <div class="receita-info">
-                        <span class="dificuldade">Fácil</span>
-                        <span class="tempo">⏱ 20 min</span>
-                    </div>
-                </div>
-
-                <div class="receita-card">
-                    <img
-                        src="/assets/img/risoto.jpg"
-                        alt="Risoto de Cogumelos Selvagens"
-                    />
-                    <h3>Risoto de Cogumelos Selvagens</h3>
-                    <div class="receita-info">
-                        <span class="dificuldade">Médio</span>
-                        <span class="tempo">⏱ 30-60 min</span>
-                    </div>
-                </div>
-
-                <div class="receita-card">
-                    <img
-                        src="/assets/img/salada.jpg"
-                        alt="Salada Caesar com Frango Grelhado"
-                    />
-                    <h3>Salada Caesar com Frango Grelhado</h3>
-                    <div class="receita-info">
-                        <span class="dificuldade">Fácil</span>
-                        <span class="tempo">⏱ 30 min</span>
-                    </div>
-                </div>
-
-                <div class="receita-card">
-                    <img
-                        src="/assets/img/pao-queijo.jpg"
-                        alt="Pão de Queijo Caseiro"
-                    />
-                    <h3>Pão de Queijo Caseiro</h3>
-                    <div class="receita-info">
-                        <span class="dificuldade">Fácil</span>
-                        <span class="tempo">⏱ 30-60 min</span>
-                    </div>
-                </div>
-
-                <div class="receita-card">
-                    <img
-                        src="/assets/img/sopa-legumes.jpg"
-                        alt="Sopa de Legumes com Massa"
-                    />
-                    <h3>Sopa de Legumes com Massa</h3>
-                    <div class="receita-info">
-                        <span class="dificuldade">Fácil</span>
-                        <span class="tempo">⏱ 30-60 min</span>
-                    </div>
-                </div>
-
-                <div class="receita-card">
-                    <img
-                        src="/assets/img/moqueca.jpg"
-                        alt="Moqueca Capixaba Vegana"
-                    />
-                    <h3>Moqueca Capixaba Vegana</h3>
-                    <div class="receita-info">
-                        <span class="dificuldade">Médio</span>
-                        <span class="tempo">⏱ 60 min</span>
-                    </div>
-                </div>
-
-                <div class="receita-card">
-                    <img
-                        src="/assets/img/torta-frango.jpg"
-                        alt="Torta de Frango com Requeijão"
-                    />
-                    <h3>Torta de Frango com Requeijão</h3>
-                    <div class="receita-info">
-                        <span class="dificuldade">Médio</span>
-                        <span class="tempo">⏱ 30-60 min</span>
-                    </div>
-                </div>
-
-                <div class="receita-card">
-                    <img
-                        src="/assets/img/bolo-cenoura.jpg"
-                        alt="Bolo de Cenoura com Cobertura de Chocolate"
-                    />
-                    <h3>Bolo de Cenoura com Cobertura de Chocolate</h3>
-                    <div class="receita-info">
-                        <span class="dificuldade">Fácil</span>
-                        <span class="tempo">⏱ 80 min</span>
-                    </div>
-                </div>
-
-                <div class="receita-card">
-                    <img
-                        src="/assets/img/escondidinho.jpg"
-                        alt="Escondidinho de Carne Seca"
-                    />
-                    <h3>Escondidinho de Carne Seca</h3>
-                    <div class="receita-info">
-                        <span class="dificuldade">Médio</span>
-                        <span class="tempo">⏱ 50 min</span>
-                    </div>
-                </div>
-
-                <div class="receita-card">
-                    <img
-                        src="/assets/img/brownie.jpg"
-                        alt="Brownie Vegano de Cacau"
-                    />
-                    <h3>Brownie Vegano de Cacau</h3>
-                    <div class="receita-info">
-                        <span class="dificuldade">Fácil</span>
-                        <span class="tempo">⏱ 80 min</span>
-                    </div>
-                </div>
-
-                <div class="receita-card">
-                    <img
-                        src="/assets/img/strogonoff.jpg"
-                        alt="Strogonoff de Camarão"
-                    />
-                    <h3>Strogonoff de Camarão</h3>
-                    <div class="receita-info">
-                        <span class="dificuldade">Médio</span>
-                        <span class="tempo">⏱ 30-60 min</span>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <div class="footer-content">
-                <nav class="footer-nav">
-                    <a href="#navegacao">Navegação</a>
-                    <a href="#receitas">Receitas</a>
-                </nav>
-                <div class="footer-social">
-                    <a href="#">f</a>
-                    <a href="#">📷</a>
-                </div>
-            </div>
-            <p>Feito com ❤️ Diegasso</p>
-        </footer>
-
-        <script src="/js/script.js"></script>
-        <script>
-            // Adiciona funcionalidade de clique nos cards das receitas
-            document.querySelectorAll(".receita-card").forEach((card) => {
-                card.addEventListener("click", function () {
-                    // Redireciona para a página de detalhes
-                    window.location.href = "/pages/detalhe.html";
-                });
-
-                // Adiciona estilo de cursor para indicar que é clicável
-                card.style.cursor = "pointer";
-            });
-        </script>
-    </body>
 </html>
