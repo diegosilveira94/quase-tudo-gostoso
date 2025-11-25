@@ -1,30 +1,123 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <title>Login</title>
-  </head>
-  <body>
-    <header>
-      <!-- Logo Quase Tudo Gostoso no NAV -->
-      <a href="#">
-        <img src="#" alt="logo" />
-      </a>
-      <!-- Menu de navegação -->
-      <nav class="barra-de-navegação">
-        <a class="active" href="/index.html">Início</a>
-        <a class="active" href="/pages/receitas.html">Receitas</a>
-        <a class="active" href="/pages/sobre.html">Sobre Nós</a>
-        <a class="active" href="/pages/contato.html">Contato</a>
-      </nav>
 
-      <!-- icone de usuário -->
-      <div class="usuario-container">
-        <a href="/pages/usuario.html">👤</a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/usuario.css" />
+  <title>Acesse ou Crie Sua Conta</title>
+</head>
+
+<body>
+  <header>
+    <!-- Logo Quase Tudo Gostoso no NAV -->
+    <a class="logo-div" href="../index.html">
+      <img class="logo" src="../assets/img/logo.png" alt="logo" height="50px" width="288px" />
+    </a>
+    <!-- Menu de navegação -->
+    <nav class="barra-de-navegação">
+      <a href="../index.html">Home</a>
+      <a href="receitas.html">Receitas</a>
+      <a class="active" href="usuario.html">Usuário</a>
+      <a href="admin.html">Administração</a>
+    </nav>
+
+    <!-- Busca no header -->
+    <div class="header-busca">
+      <input type="text" placeholder="Buscar receitas..." id="busca-header" />
+      <button>🔍</button>
+    </div>
+
+    <!-- icone de usuário -->
+    <div class="usuario-container">
+      <a href="usuario.html">
+        <img src="../assets/img/icon-user.png" alt="icone-de-usuario" height="50px" width="auto" />
+      </a>
+    </div>
+  </header>
+
+  <main class="usuario-main">
+    <div class="usuario-container-principal">
+      <h1>Acesse ou Crie Sua Conta</h1>
+      <p class="usuario-subtitulo">
+        Explore e compartilhe receitas deliciosas com a comunidade Quase Tudo Gostoso.
+      </p>
+
+      <!-- Tabs Login/Cadastro -->
+      <div class="tabs-container">
+        <button class="tab-btn active" id="tab-login">Login</button>
+        <button class="tab-btn" id="tab-cadastro">Cadastro</button>
       </div>
-    </header>
-    <script src="/js/script.js"></script>
-  </body>
+
+      <!-- Formulário de Login -->
+      <div class="form-container" id="form-login">
+        <h2>Entrar</h2>
+        <form>
+          <div class="form-group">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" placeholder="seuemail@exemplo.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="login-senha">Senha</label>
+            <input type="password" id="login-senha" placeholder="********" required />
+          </div>
+
+          <button type="submit" class="btn-submit">Entrar</button>
+
+          <div class="form-footer">
+            <a href="#" class="link-recuperar">Esqueceu sua senha? <span>Clique aqui</span></a>
+          </div>
+        </form>
+      </div>
+
+      <!-- Formulário de Cadastro -->
+      <div class="form-container hidden" id="form-cadastro">
+        <h2>Cadastro</h2>
+        <form>
+          <div class="form-group">
+            <label for="cadastro-nome">Nome Completo</label>
+            <input type="text" id="cadastro-nome" placeholder="Seu nome completo" required />
+          </div>
+
+          <div class="form-group">
+            <label for="cadastro-email">Email</label>
+            <input type="email" id="cadastro-email" placeholder="seuemail@exemplo.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="cadastro-senha">Senha</label>
+            <input type="password" id="cadastro-senha" placeholder="********" required />
+          </div>
+
+          <div class="form-group">
+            <label for="cadastro-confirmar">Confirmar Senha</label>
+            <input type="password" id="cadastro-confirmar" placeholder="********" required />
+          </div>
+
+          <button type="submit" class="btn-submit">Criar Conta</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <nav class="footer-nav">
+        <a href="../index.html">Navegação</a>
+        <a href="receitas.html">Receitas</a>
+      </nav>
+      <div class="footer-social">
+        <a href="#">f</a>
+        <a href="#">📷</a>
+      </div>
+    </div>
+    <p>Feito com ❤️ Diegasso</p>
+  </footer>
+
+  <script src="../js/busca.js"></script>
+  <script src="../js/usuario.js"></script>
+</body>
+
 </html>

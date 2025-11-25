@@ -1,30 +1,110 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <title>Página Inicial</title>
-  </head>
-  <body>
-    <header>
-      <!-- Logo Quase Tudo Gostoso no NAV -->
-      <a href="#">
-        <img src="#" alt="logo" />
-      </a>
-      <!-- Menu de navegação -->
-      <nav class="barra-de-navegação">
-        <a class="active" href="/index.html">Início</a>
-        <a class="active" href="/pages/receitas.html">Receitas</a>
-        <a class="active" href="/pages/sobre.html">Sobre Nós</a>
-        <a class="active" href="/pages/contato.html">Contato</a>
-      </nav>
 
-      <!-- icone de usuário -->
-      <div class="usuario-container">
-        <a href="/pages/usuario.html">👤</a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <title>Quase Tudo Gostoso - Receitas Deliciosas</title>
+</head>
+
+<body>
+  <header>
+    <!-- Logo Quase Tudo Gostoso no NAV -->
+    <a class="logo-div" href="../index.html">
+      <img class="logo" src="../assets/img/logo.png" alt="logo" height="50px" width="288px" />
+    </a>
+    <!-- Menu de navegação -->
+    <nav class="barra-de-navegação">
+      <a class="active" href="../index.html">Home</a>
+      <a href="receitas.html">Receitas</a>
+      <a href="usuario.html">Usuário</a>
+      <a href="admin.html">Administração</a>
+    </nav>
+
+    <!-- Busca no header -->
+    <div class="header-busca">
+      <input type="text" placeholder="Buscar receitas..." id="busca-header" />
+      <button>🔍</button>
+    </div>
+
+    <!-- icone de usuário -->
+    <div class="usuario-container">
+      <a href="usuario.html">
+        <img src="../assets/img/icon-user.png" alt="icone-de-usuario" height="50px" width="auto" />
+      </a>
+    </div>
+  </header>
+
+  <!-- Banner Principal -->
+  <div class="banner-container">
+    <img src="../assets/img/cozinhar.jpg" alt="pessoa-cozinhando" class="banner-imagem" />
+    <div class="banner-overlay"></div>
+    <div class="banner-conteudo">
+      <h1 class="texto1">Culinária com Paixão e Sabor</h1>
+      <p class="sub-texto">
+        Descubra um mundo de receitas deliciosas para cada ocasião,
+        criadas com amor e perfeição.
+      </p>
+      <a href="receitas.html" class="botao">Explorar Receitas</a>
+    </div>
+  </div>
+
+  <main class="home-main">
+    <!-- Seção Receitas em Destaque -->
+    <section class="secao-destaque">
+      <h2>Receitas em Destaque</h2>
+      <p class="secao-subtitulo">
+        Descubra as favoritas da nossa comunidade e os pratos mais saborosos.
+      </p>
+      <div class="receitas-destaque-grid" id="receitas-destaque">
+        <!-- Cards serão inseridos via JavaScript -->
       </div>
-    </header>
-    <script src="/js/script.js"></script>
-  </body>
+    </section>
+
+    <!-- Seção Explore por Categoria -->
+    <section class="secao-categorias">
+      <h2>Explore por Categoria</h2>
+      <p class="secao-subtitulo">
+        Encontre a receita perfeita para o seu humor ou necessidade.
+      </p>
+      <div class="categorias-grid">
+        <div class="categoria-card">
+          <span class="categoria-icone">🍽️</span>
+          <h3>Pratos Principais</h3>
+          <p>Receitas substanciosas para qualquer refeição.</p>
+        </div>
+        <div class="categoria-card">
+          <span class="categoria-icone">🎂</span>
+          <h3>Sobremesas</h3>
+          <p>Doces para adoçar o seu dia.</p>
+        </div>
+        <div class="categoria-card">
+          <span class="categoria-icone">🥗</span>
+          <h3>Vegano</h3>
+          <p>Opções deliciosas e nutritivas.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <nav class="footer-nav">
+        <a href="../index.html">Navegação</a>
+        <a href="receitas.html">Receitas</a>
+      </nav>
+      <div class="footer-social">
+        <a href="#">f</a>
+        <a href="#">📷</a>
+      </div>
+    </div>
+    <p>Feito com ❤️ Diegasso</p>
+  </footer>
+
+  <script src="../js/receitas-data.js"></script>
+  <script src="../js/busca.js"></script>
+  <script src="../js/home.js"></script>
+</body>
+
 </html>

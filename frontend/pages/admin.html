@@ -1,41 +1,230 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <title>Admin</title>
-  </head>
-  <body>
-    <!-- Cabeçalho -->
-    <header>
-      <!-- Logo Quase Tudo Gostoso no NAV -->
-      <a href="#">
-        <img src="#" alt="logo" />
-      </a>
-      <!-- Menu de navegação -->
-      <nav class="barra-de-navegação">
-        <a class="active" href="/index.html">Início</a>
-        <a class="active" href="/pages/receitas.html">Receitas</a>
-        <a class="active" href="/pages/sobre.html">Sobre Nós</a>
-        <a class="active" href="/pages/">Contato</a>
-      </nav>
 
-      <!-- icone de usuário -->
-      <div class="usuario-container">
-        <a href="/pages/usuario.html">👤</a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/admin.css" />
+  <title>Painel de Administração</title>
+</head>
+
+<body>
+  <header>
+    <!-- Logo Quase Tudo Gostoso no NAV -->
+    <a class="logo-div" href="../index.html">
+      <img class="logo" src="../assets/img/logo.png" alt="logo" height="50px" width="288px" />
+    </a>
+    <!-- Menu de navegação -->
+    <nav class="barra-de-navegação">
+      <a href="../index.html">Home</a>
+      <a href="receitas.html">Receitas</a>
+      <a href="usuario.html">Usuário</a>
+      <a class="active" href="admin.html">Administração</a>
+    </nav>
+
+    <!-- Busca no header -->
+    <div class="header-busca">
+      <input type="text" placeholder="Buscar receitas..." id="busca-header" />
+      <button>🔍</button>
+    </div>
+
+    <!-- icone de usuário -->
+    <div class="usuario-container">
+      <a href="usuario.html">
+        <img src="../assets/img/icon-user.png" alt="icone-de-usuario" height="50px" width="auto" />
+      </a>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <div class="admin-container">
+      <h1>Painel de Administração</h1>
+
+      <!-- Tabs Navegação -->
+      <div class="admin-tabs">
+        <button class="admin-tab-btn active" data-tab="categorias">Categorias</button>
+        <button class="admin-tab-btn" data-tab="ingredientes">Ingredientes</button>
+        <button class="admin-tab-btn" data-tab="utensilios">Utensílios</button>
       </div>
-    </header>
-    <!-- Conteúdo principal -->
-    <main>
-      <section class="banner-home">
-        <img src="#" alt="" />
-        <h1>Quase Tudo Gostoso</h1>
-        <p>Encontre seu próximo prato favorito</p>
-        <input type="search" id="pesquisa-banner" />
-        <button>Buscar</button>
-      </section>
-    </main>
-    <script src="/js/script.js"></script>
-  </body>
+
+      <!-- Tab Categorias -->
+      <div class="admin-tab-content active" id="tab-categorias">
+        <section class="admin-section">
+          <h2>Adicionar Nova Categoria</h2>
+          <p class="admin-descricao">Preencha os campos abaixo para adicionar um novo item.</p>
+
+          <form class="admin-form">
+            <div class="form-group">
+              <label for="categoria-nome">Nome da Categoria</label>
+              <input type="text" id="categoria-nome" placeholder="Ex: Sobremesas" required />
+            </div>
+            <button type="submit" class="btn-adicionar">Adicionar Categoria</button>
+          </form>
+        </section>
+
+        <section class="admin-section">
+          <h2>Categorias Existentes</h2>
+          <p class="admin-descricao">Visualize e gerencie os itens existentes.</p>
+
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="lista-categorias">
+              <tr>
+                <td>Sobremesas</td>
+                <td class="acoes-td">
+                  <button class="btn-editar">✏️ Editar</button>
+                  <button class="btn-excluir">🗑️ Excluir</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Pratos Principais</td>
+                <td class="acoes-td">
+                  <button class="btn-editar">✏️ Editar</button>
+                  <button class="btn-excluir">🗑️ Excluir</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Vegano</td>
+                <td class="acoes-td">
+                  <button class="btn-editar">✏️ Editar</button>
+                  <button class="btn-excluir">🗑️ Excluir</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Café da Manhã</td>
+                <td class="acoes-td">
+                  <button class="btn-editar">✏️ Editar</button>
+                  <button class="btn-excluir">🗑️ Excluir</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Sopas</td>
+                <td class="acoes-td">
+                  <button class="btn-editar">✏️ Editar</button>
+                  <button class="btn-excluir">🗑️ Excluir</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+
+      <!-- Tab Ingredientes -->
+      <div class="admin-tab-content" id="tab-ingredientes">
+        <section class="admin-section">
+          <h2>Adicionar Novo Ingrediente</h2>
+          <p class="admin-descricao">Preencha os campos abaixo para adicionar um novo item.</p>
+
+          <form class="admin-form">
+            <div class="form-group">
+              <label for="ingrediente-nome">Nome do Ingrediente</label>
+              <input type="text" id="ingrediente-nome" placeholder="Ex: Farinha de Trigo" required />
+            </div>
+            <button type="submit" class="btn-adicionar">Adicionar Ingrediente</button>
+          </form>
+        </section>
+
+        <section class="admin-section">
+          <h2>Ingredientes Existentes</h2>
+          <p class="admin-descricao">Visualize e gerencie os itens existentes.</p>
+
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="lista-ingredientes">
+              <tr>
+                <td>Farinha de Trigo</td>
+                <td class="acoes-td">
+                  <button class="btn-editar">✏️ Editar</button>
+                  <button class="btn-excluir">🗑️ Excluir</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Açúcar</td>
+                <td class="acoes-td">
+                  <button class="btn-editar">✏️ Editar</button>
+                  <button class="btn-excluir">🗑️ Excluir</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+
+      <!-- Tab Utensílios -->
+      <div class="admin-tab-content" id="tab-utensilios">
+        <section class="admin-section">
+          <h2>Adicionar Novo Utensílio</h2>
+          <p class="admin-descricao">Preencha os campos abaixo para adicionar um novo item.</p>
+
+          <form class="admin-form">
+            <div class="form-group">
+              <label for="utensilio-nome">Nome do Utensílio</label>
+              <input type="text" id="utensilio-nome" placeholder="Ex: Batedeira" required />
+            </div>
+            <button type="submit" class="btn-adicionar">Adicionar Utensílio</button>
+          </form>
+        </section>
+
+        <section class="admin-section">
+          <h2>Utensílios Existentes</h2>
+          <p class="admin-descricao">Visualize e gerencie os itens existentes.</p>
+
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="lista-utensilios">
+              <tr>
+                <td>Batedeira</td>
+                <td class="acoes-td">
+                  <button class="btn-editar">✏️ Editar</button>
+                  <button class="btn-excluir">🗑️ Excluir</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Panela de Pressão</td>
+                <td class="acoes-td">
+                  <button class="btn-editar">✏️ Editar</button>
+                  <button class="btn-excluir">🗑️ Excluir</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <nav class="footer-nav">
+        <a href="../index.html">Navegação</a>
+        <a href="receitas.html">Receitas</a>
+      </nav>
+      <div class="footer-social">
+        <a href="#">f</a>
+        <a href="#">📷</a>
+      </div>
+    </div>
+    <p>Feito com ❤️ Diegasso</p>
+  </footer>
+
+  <script src="../js/busca.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+
 </html>
