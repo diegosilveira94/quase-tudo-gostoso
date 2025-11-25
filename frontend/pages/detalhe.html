@@ -1,30 +1,290 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <title>Detalhe Receita</title>
-  </head>
-  <body>
-    <header>
-      <!-- Logo Quase Tudo Gostoso no NAV -->
-      <a href="#">
-        <img src="#" alt="logo" />
-      </a>
-      <!-- Menu de navegação -->
-      <nav class="barra-de-navegação">
-        <a class="active" href="/index.html">Início</a>
-        <a class="active" href="/pages/receitas.html">Receitas</a>
-        <a class="active" href="/pages/sobre.html">Sobre Nós</a>
-        <a class="active" href="/pages/contato.html">Contato</a>
-      </nav>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/style.css" />
+        <title>Detalhes da Receita</title>
+    </head>
+    <body>
+        <header>
+            <!-- Logo Quase Tudo Gostoso no NAV -->
+            <a class="logo-div" href="/">
+                <img
+                    class="logo"
+                    src="/assets/img/logo.png"
+                    alt="logo"
+                    height="50px"
+                    width="288px"
+                />
+            </a>
+            <!-- Menu de navegação -->
+            <nav class="barra-de-navegação">
+                <a href="/index.html">Início</a>
+                <a class="active" href="/pages/receitas.html">Receitas</a>
+                <a href="/pages/sobre.html">Sobre Nós</a>
+                <a href="/pages/contato.html">Contato</a>
+            </nav>
 
-      <!-- icone de usuário -->
-      <div class="usuario-container">
-        <a href="/pages/usuario.html">👤</a>
-      </div>
-    </header>
-    <script src="/js/script.js"></script>
-  </body>
+            <!-- Busca no header -->
+            <div class="header-busca">
+                <input
+                    type="text"
+                    placeholder="Buscar receitas..."
+                    id="busca-header"
+                />
+                <button>🔍</button>
+            </div>
+
+            <!-- icone de usuário -->
+            <div class="usuario-container">
+                <a href="/pages/usuario.html">
+                    <img
+                        src="/assets/img/icon-user.png"
+                        alt="icone-de-usuario"
+                        height="50px"
+                        width="auto"
+                    />
+                </a>
+            </div>
+        </header>
+
+        <main class="detalhe-main">
+            <!-- Banner com imagem e título -->
+            <section class="detalhe-banner">
+                <img
+                    id="receita-imagem"
+                    src="/assets/img/feijoada.jpg"
+                    alt="Feijoada Completa Brasileira"
+                />
+                <div class="detalhe-banner-content">
+                    <h1 id="receita-titulo">Feijoada Completa Brasileira</h1>
+                    <p id="receita-descricao">
+                        Um prato robusto e saboroso, perfeito para compartilhar.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Informações gerais -->
+            <section class="detalhe-info">
+                <p id="receita-historia">
+                    A feijoada é um dos pratos mais emblemáticos e amados da
+                    culinária brasileira. Tradicionalmente servida aos sábados,
+                    é um guisado rico e encorpado de feijão preto com diversas
+                    carnes de porco e boi, acompanhado por arroz branco, farofa,
+                    couve refogada e fatias de laranja. É uma celebração de
+                    sabores e texturas, ideal para um almoço em família ou entre
+                    amigos.
+                </p>
+
+                <div class="detalhe-stats">
+                    <div class="stat">
+                        <span class="stat-icon">🍽️</span>
+                        <span class="stat-label">Médio</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-icon">⏱️</span>
+                        <span class="stat-label">2h 30min</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-icon">👥</span>
+                        <span class="stat-label">6-8 porções</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ingredientes e Modo de Preparo -->
+            <section class="detalhe-conteudo">
+                <div class="detalhe-ingredientes">
+                    <h2>Feijão preto</h2>
+                    <ul id="ingredientes-1">
+                        <li>Costela de porco salgada desfiada</li>
+                        <li>Linguiça calabresa defumada</li>
+                        <li>Bacon em cubos</li>
+                        <li>Alho picado</li>
+                        <li>Óleo vegetal</li>
+                    </ul>
+
+                    <h2 style="margin-top: 30px">Carne seca desfiada</h2>
+                    <ul id="ingredientes-2">
+                        <li>Lombo de porco salgado desfiado</li>
+                        <li>Linguiça pão</li>
+                        <li>Folha de louro</li>
+                        <li>Cebolas midiãs picadas</li>
+                        <li>Sal e pimenta do reino</li>
+                    </ul>
+                </div>
+
+                <div class="detalhe-modo-preparo">
+                    <h2>Modo de Preparo</h2>
+                    <ol id="modo-preparo">
+                        <li>
+                            Deixe a feijão preto da moito por 8 horas. Desalgue
+                            as carnes secas e salgadas, tricando a água várias
+                            vezes por 24 horas.
+                        </li>
+                        <li>
+                            Cozinhe a feijão em panela de pressão com as folhas
+                            de louro por 30 minutos até o início de pressão.
+                            Reserve.
+                        </li>
+                        <li>
+                            Em outra panela de pressão, cozinhe as carnes
+                            desfiando (carne seca, costela, toucinho) por cerca
+                            de 40 minutos. Retire, escorra e pele.
+                        </li>
+                        <li>
+                            Em uma panela grande, frita o bacon e ajounhe.
+                            Adicione a cebola e alho, refogando. Misture bem e
+                            deixar macerar e transforados.
+                        </li>
+                        <li>
+                            Acrescente as linguiças e carnes cozidas na panela
+                            de pressão. Cozinhe por mais 30 minutos até
+                            desfiado. Misture bem e deixar cozinhar por alguns
+                            minutos.
+                        </li>
+                        <li>
+                            Incorpore o feijão cozido com a água do cozimento às
+                            carnes. Se necessário, adicione mais água quente
+                            para cobertur. Cozinhe em lego baixo por pelo menos
+                            30 minutos, mexendo ocasionalmente, para que os
+                            sabores se incorporem.
+                        </li>
+                        <li>
+                            Prove e ajuste o sal e a pimenta. Sirva a feijoada
+                            quente com arroz branco, farōfa, couve refogada e
+                            fatias de laranja.
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Informações adicionais -->
+            <section class="detalhe-info-adicionais">
+                <div class="info-box">
+                    <h3>Utensílios Necessários:</h3>
+                    <p id="utensilios">
+                        Panela de pressão, Panela grande, Tábua de corte, Faca
+                    </p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Custo Estimado:</h3>
+                    <p id="custo">R$ 60-80 (para 6-8 porções)</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Origem da Cozinha:</h3>
+                    <p id="origem">Culinária Brasileira</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Notas do Prato:</h3>
+                    <p id="notas">
+                        Para um sabor ainda mais autêntico, você pode adicionar
+                        pé e orelha do defumados (desosissimamente costuído).
+                        Você também poder deixar marinados e costuidos em um
+                        prato definindo autenticidade e todos.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Comentários -->
+            <section class="detalhe-comentarios">
+                <h2>Deixe seu comentário</h2>
+                <form class="comentario-form">
+                    <textarea
+                        placeholder="Compartilhe sua experiência ou dúvida sobre esta receita..."
+                        rows="5"
+                        id="comentario-texto"
+                    >
+                    </textarea>
+                    <button type="submit" class="btn-comentar">
+                        Enviar Comentário
+                    </button>
+                </form>
+
+                <div class="comentarios-lista">
+                    <div class="comentario">
+                        <div class="comentario-header">
+                            <img
+                                src="/assets/img/user-avatar.jpg"
+                                alt="Avatar"
+                                class="comentario-avatar"
+                            />
+                            <div>
+                                <strong>Ana Clara</strong>
+                                <span class="comentario-data"
+                                    >7 dias atrás</span
+                                >
+                            </div>
+                        </div>
+                        <p class="comentario-texto">
+                            Meu prato de feijoada à simplesmente maravilhoso! Ió
+                            para o almoço de domingo e foi um sucesso total. As
+                            instruções são bem detalhadas!
+                        </p>
+                    </div>
+
+                    <div class="comentario">
+                        <div class="comentario-header">
+                            <img
+                                src="/assets/img/user-avatar.jpg"
+                                alt="Avatar"
+                                class="comentario-avatar"
+                            />
+                            <div>
+                                <strong>João Pedro</strong>
+                                <span class="comentario-data"
+                                    >3 semana atrás</span
+                                >
+                            </div>
+                        </div>
+                        <p class="comentario-texto">
+                            Excelente! Adicionei um toque de pimenta biquinho e
+                            ficou perfeita. Dica: não pule a etapa de desalgar
+                            as carnes!
+                        </p>
+                    </div>
+
+                    <div class="comentario">
+                        <div class="comentario-header">
+                            <img
+                                src="/assets/img/user-avatar.jpg"
+                                alt="Avatar"
+                                class="comentario-avatar"
+                            />
+                            <div>
+                                <strong>Mariana Souza</strong>
+                                <span class="comentario-data"
+                                    >2 semanas atrás</span
+                                >
+                            </div>
+                        </div>
+                        <p class="comentario-texto">
+                            Nunca tinha feito feijoada antes, e esta receita me
+                            deu confiança. O resultado foi delicioso!
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <nav class="footer-nav">
+                    <a href="#navegacao">Navegação</a>
+                    <a href="#receitas">Receitas</a>
+                </nav>
+                <div class="footer-social">
+                    <a href="#">f</a>
+                    <a href="#">📷</a>
+                </div>
+            </div>
+            <p>Feito com ❤️ Diegasso</p>
+        </footer>
+
+        <script src="/js/script.js"></script>
+    </body>
 </html>

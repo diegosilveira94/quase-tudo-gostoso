@@ -1,44 +1,764 @@
-html {
-  height: 100vh;
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #fffdf9;
+  color: #333;
 }
 
+/* ===== HEADER ===== */
 header {
+  width: 100%;
   display: flex;
-  width: auto;
   align-items: center;
-  margin: 10px;
-  gap: 10px;
-  height: 50px;
   justify-content: space-between;
-  text-decoration: none;
-  color: black;
-  background-color: rgb(255, 255, 255);
+
+  padding: 18px 50px;
+  background: #ffffff;
+  border-bottom: 1px solid #eee;
+
+  position: sticky;
+  top: 0;
+  z-index: 99;
 }
 
-.barra-de-navegação > a {
-  font-size: 17pt;
-  text-decoration: none;
-  color: black;
-  margin: 0 10px;
+/* ===== Logo com Degradê e Glass ===== */
+.logo-div {
+  padding: 8px 12px;
+  border-radius: 20px;
+
+  background: linear-gradient(135deg, #ff950b 0%, #552c05 100%);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
 }
 
-.barra-de-navegação a.active {
-  color: rgb(210, 117, 4);
-  font-weight: bold;
+.logo {
+  filter: brightness(0) invert(1); /* deixa branca */
 }
 
-footer {
+/* ===== NAV MENU ===== */
+.barra-de-navegação {
   display: flex;
-  height: 100px;
+  gap: 30px;
+}
+
+.barra-de-navegação a {
+  text-decoration: none;
+  font-size: 15pt;
+  color: #5a5a5a;
+  transition: 0.2s ease;
+}
+
+.barra-de-navegação a:hover,
+.barra-de-navegação a.active {
+  color: #d9793e;
+  font-weight: 600;
+}
+
+/* ===== USUÁRIO ===== */
+.usuario-container img {
+  filter: brightness(0.3);
+  cursor: pointer;
+}
+
+/* ===== BANNER ===== */
+.banner-container {
+  width: 100%;
+  height: 550px;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.75);
+}
+
+/* ----- Texto principal sobre o banner ----- */
+.texto1 {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.sub-texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #f7f7f7;
+  font-size: 19px;
+  text-align: center;
+  width: 70%;
+  line-height: 1.4;
+}
+
+/* ===== Botão do banner ===== */
+.botao {
+  position: absolute;
+  top: 32%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: 12px 22px;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+
+  color: white;
+  font-size: 14pt;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.botao:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+/* ===== BUSCA CENTRAL ===== */
+.pesquisa-container {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+
+  background: white;
+  padding: 12px 20px;
+  border-radius: 40px;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.15);
+}
+
+#pesquisa-input {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  width: 320px;
+}
+
+#pesquisa-btn {
+  background: #d9793e;
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 10px 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-left: 12px;
+  transition: 0.2s;
+}
+
+#pesquisa-btn:hover {
+  background: #c96527;
+}
+
+/* ===== MAIN ===== */
+main {
+  width: 100%;
+  text-align: center;
+  margin-top: 80px;
+}
+
+main section h1 {
+  font-size: 28pt;
+  margin-bottom: 10px;
+  color: #4a3b28;
+}
+
+main section p {
+  color: #6d5b47;
+  font-size: 14pt;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  margin-top: 80px;
+  background: #d87212;
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+  font-size: 14pt;
+  font-weight: 500;
+}
+
+.imagem-principal{
+  filter: brightness(0.7);   /* deixa 30% mais escura */
+  transition: filter 0.3s ease;
+}
+
+/* ===== HEADER BUSCA ===== */
+.header-busca {
+  display: flex;
+  align-items: center;
+  background: #f5f5f5;
+  border-radius: 25px;
+  padding: 8px 15px;
+}
+
+.header-busca input {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 200px;
+  font-size: 14px;
+  color: #666;
+}
+
+.header-busca button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+/* ===== RECEITAS PAGE ===== */
+.receitas-main {
+  padding: 40px 50px;
+}
+
+.receitas-titulo {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.receitas-titulo h1 {
+  font-size: 36pt;
+  color: #2a2a2a;
+  font-weight: 700;
+}
+
+/* ===== FILTROS ===== */
+.filtros-section {
+  background: #faf5f0;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 50px;
+}
+
+.filtros-section h2 {
+  font-size: 18pt;
+  color: #333;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.filtros-section p {
+  color: #777;
+  font-size: 13pt;
+  margin-bottom: 20px;
+}
+
+.filtros-container {
+  display: flex;
+  gap: 15px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.filtro-grupo {
+  display: flex;
+  flex-direction: column;
+}
+
+.filtro-grupo label {
+  font-size: 12pt;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.filtro-grupo select {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 13pt;
+  color: #666;
+  cursor: pointer;
+  background: white;
+  min-width: 180px;
+}
+
+.btn-filtrar {
+  background: #d9793e;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-size: 13pt;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-filtrar:hover {
+  background: #c96527;
+}
+
+.btn-limpar {
+  background: white;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-size: 13pt;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-limpar:hover {
+  background: #f5f5f5;
+}
+
+/* ===== GRID DE RECEITAS ===== */
+.receitas-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-bottom: 60px;
+}
+
+.receita-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.receita-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.receita-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.receita-card h3 {
+  padding: 15px 15px 10px;
+  font-size: 14pt;
+  color: #333;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.receita-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px 15px;
+  font-size: 12pt;
+  color: #777;
+}
+
+.dificuldade {
+  background: #f0f0f0;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 500;
+  color: #555;
+}
+
+.tempo {
+  font-weight: 500;
+  color: #888;
+}
+
+/* ===== FOOTER RECEITAS ===== */
+footer {
+  margin-top: 0;
+  background: #d87212;
+  color: white;
+  padding: 30px 50px;
+  text-align: center;
+  font-size: 13pt;
+  font-weight: 500;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.footer-nav a:hover {
+  opacity: 0.8;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.2s;
+}
+
+.footer-social a:hover {
+  opacity: 0.8;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 1200px) {
+  .receitas-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .receitas-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filtros-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filtro-grupo select,
+  .btn-filtrar,
+  .btn-limpar {
+    width: 100%;
+  }
+
+  .receitas-main {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .receitas-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== DETALHE RECEITA ===== */
+.detalhe-main {
+  padding: 0;
+}
+
+.detalhe-banner {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.detalhe-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+.detalhe-banner-content {
+  position: absolute;
+  bottom: 40px;
+  left: 50px;
+  color: white;
+  z-index: 10;
+}
+
+.detalhe-banner-content h1 {
+  font-size: 36pt;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.detalhe-banner-content p {
+  font-size: 16pt;
+  color: #f0f0f0;
+}
+
+/* ===== DETALHE INFO ===== */
+.detalhe-info {
+  padding: 40px 50px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.detalhe-info p {
+  font-size: 14pt;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.detalhe-stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 25px;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stat-icon {
+  font-size: 24px;
+}
+
+.stat-label {
+  font-size: 14pt;
+  font-weight: 600;
+  color: #333;
+}
+
+/* ===== DETALHE CONTEUDO ===== */
+.detalhe-conteudo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  padding: 40px 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-top: 1px solid #eee;
+}
+
+.detalhe-ingredientes h2,
+.detalhe-modo-preparo h2 {
+  font-size: 18pt;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.detalhe-ingredientes ul {
+  list-style: none;
+  padding: 0;
+}
+
+.detalhe-ingredientes li {
+  font-size: 13pt;
+  color: #666;
+  padding: 8px 0;
+  padding-left: 20px;
+  position: relative;
+}
+
+.detalhe-ingredientes li:before {
+  content: "•";
+  color: #d9793e;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.detalhe-modo-preparo ol {
+  counter-reset: list-counter;
+  list-style: none;
+  padding: 0;
+}
+
+.detalhe-modo-preparo li {
+  counter-increment: list-counter;
+  font-size: 13pt;
+  color: #666;
+  margin-bottom: 20px;
+  padding-left: 30px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.detalhe-modo-preparo li:before {
+  content: counter(list-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #d9793e;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(210, 117, 4);
+  font-size: 11pt;
+  font-weight: 600;
 }
 
-.root > footer {
-  align-items: end;
+/* ===== DETALHE INFO ADICIONAIS ===== */
+.detalhe-info-adicionais {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  padding: 40px 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-top: 1px solid #eee;
+}
+
+.info-box h3 {
+  font-size: 14pt;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.info-box p {
+  font-size: 13pt;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ===== COMENTARIOS ===== */
+.detalhe-comentarios {
+  padding: 40px 50px;
+  max-width: 900px;
+  margin: 0 auto;
+  border-top: 1px solid #eee;
+}
+
+.detalhe-comentarios h2 {
+  font-size: 18pt;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.comentario-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.comentario-form textarea {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 13pt;
+  font-family: inherit;
+  resize: vertical;
+  color: #333;
+}
+
+.btn-comentar {
+  background: #d9793e;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 13pt;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  width: fit-content;
+}
+
+.btn-comentar:hover {
+  background: #c96527;
+}
+
+.comentarios-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.comentario {
+  padding: 20px;
+  background: #fafafa;
+  border-radius: 8px;
+}
+
+.comentario-header {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.comentario-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.comentario-header strong {
+  display: block;
+  color: #333;
+  font-size: 13pt;
+}
+
+.comentario-data {
+  font-size: 11pt;
+  color: #999;
+}
+
+.comentario-texto {
+  font-size: 13pt;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ===== RESPONSIVO DETALHE ===== */
+@media (max-width: 968px) {
+  .detalhe-conteudo {
+    grid-template-columns: 1fr;
+  }
+
+  .detalhe-info-adicionais {
+    grid-template-columns: 1fr;
+  }
+
+  .detalhe-stats {
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .detalhe-banner-content {
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .detalhe-banner-content h1 {
+    font-size: 24pt;
+  }
+
+  .detalhe-info,
+  .detalhe-conteudo,
+  .detalhe-info-adicionais,
+  .detalhe-comentarios {
+    padding: 25px 20px;
+  }
 }
