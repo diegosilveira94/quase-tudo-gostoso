@@ -39,6 +39,7 @@ header{
     display: flex;
     align-items: center;
     padding-left: 16px;
+    cursor: pointer;
 }
 
 .logo img{
@@ -138,9 +139,7 @@ header{
     background-color: #c86848;
 }
 
-/* ================================
-   SEÇÃO "RECEITAS EM DESTAQUE"
-=================================== */
+/*SEÇÃO "RECEITAS EM DESTAQUE*/
 
 .destaques {
     text-align: center;
@@ -162,9 +161,7 @@ header{
     line-height: 1.6;
 }
 
-/* ================================
-   GRID DE CARDS
-=================================== */
+/*GRID DE CARDS*/
 
 .grid-recipes {
     display: grid;
@@ -194,17 +191,61 @@ header{
 }
 
 /* Imagem */
-.recipe-card img {
+.card-image{
+    position: relative;
+    overflow: hidden;
+    height: 230px;
+}
+
+.card-image img {
     width: 100%;
-    height: 180px;
+    height: 230px;
     object-fit: cover;
+    display: block;
+    transition: 0.25s;
+}
+.recipe-card:hover .card-image img {
+    transform: scale(1.1);
+    transition: 0.25s;
+}
+
+/* Degradê branco na imagem */
+
+.card-image::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0));
+    z-index: 1;
+    transition: 0.25s;
+}
+
+.recipe-card:hover .card-image::after {
+    height: 15%;
+    transition: 0.25s;
+}
+
+/* Título sobre a imagem */
+.card-image h3 {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    z-index: 2;
+    margin: 0;
+    padding-bottom: 20x;
+    font-size: 18px;
+    font-weight: 700;
+    color: #2C1810;
 }
 
 /* Conteúdo interno do card */
 .card-info {
     padding: 18px;
-    text-align: left;
 }
+
 
 /* Título do card */
 .card-info h3 {
@@ -230,7 +271,7 @@ header{
 .categorias {
     text-align: center;
     padding: 80px 0;
-    background-color: #faf7f2; /* tom claro igual ao print */
+    background-color: #faf7f2;
 }
 
 .categorias h2 {
@@ -245,6 +286,8 @@ header{
     margin-top: 10px;
     margin-bottom: 50px;
 }
+
+
 
 /* GRID */
 .categoria-grid {
@@ -268,13 +311,14 @@ header{
 .categoria-card:hover {
     transform: translateY(-6px);
     box-shadow: 0px 6px 16px rgba(0,0,0,0.10);
+    cursor: pointer;
 }
 
 /* Icone */
 .categoria-card img {
     height: 55px;
     margin-bottom: 18px;
-    filter: hue-rotate(0deg) brightness(1) saturate(1.6);
+    filter: brightness(0) saturate(100%) invert(68%) sepia(48%) saturate(627%) hue-rotate(-17deg) brightness(96%) contrast(92%);
 }
 
 /* Título */
@@ -296,7 +340,7 @@ header{
 .footer {
     background-color: #d87800; 
     padding: 25px 0;
-    margin-top: 60px;
+        
 }
 
 .footer-content {
@@ -330,3 +374,4 @@ header{
 .footer-social a img:hover {
     opacity: 0.7;
 }
+
