@@ -45,6 +45,25 @@ const UserModel = {
     const [rows] = await db.execute(query, [id]);
     return rows[0];
   },
+
+  // buscar usuario com condições personalizadas
+  findOne: async (options) => {
+    const { where } = options;
+
+    if (!where) {
+      throw new Error("Parâmetro 'where' é obrigatório para findOne");
+    }
+
+    // Construir query dinamicamente baseada nas condições
+    const conditions = Object.keys(where);
+    const values = Object.values(where);
+
+    const whereClause = conditions.map((col) => `${col} = ?`).join(" AND ");
+    const query = `SELECT * FROM usuario WHERE ${whereClause}`;
+
+    const [rows] = await db.execute(query, values);
+    return rows[0];
+  },
 };
 
 export default UserModel;

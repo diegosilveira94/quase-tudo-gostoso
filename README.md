@@ -57,7 +57,7 @@ yarn install
 4. **Configure o banco de dados**
 
 - Inicie o MySQL no XAMPP
-- Execute o setup:
+- Execute o setup para criar o banco e tabelas, além de popularizar com dados fictícios:
 
 ```bash
 yarn db:setup
@@ -69,9 +69,17 @@ yarn db:setup
 yarn start
 ```
 
+ou
+
+```bash
+npx yarn start
+```
+
 6. **Acesse o sistema**
 
-- Abra: `http://localhost:3000`
+- Para acesso aos endpoints: `http://localhost:3000`
+- Para acesso ao frontend (com cadastro-usuário já integrado com backend) acesse com LiveServer:
+  `frontend/pages/usuario.html`
 
 ## 📝 Funcionalidades
 
@@ -82,7 +90,7 @@ yarn start
 
 ## 📚 Endpoints
 
-- `POST /api/cadastrar-usuario` - Cadastrar usuário
+- `POST /api/cadastrar-usuario` - Cadastrar usuário (integrado com o frontend)
 - `GET /api/usuarios` - Listar usuários
 - `POST /api/cadastrar-categoria` - Cadastrar categoria
 - `GET /api/categorias` - Listar categorias

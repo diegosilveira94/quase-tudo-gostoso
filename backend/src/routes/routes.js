@@ -2,6 +2,7 @@ import express from "express";
 import {
   cadastrarUsuario,
   listarUsuarios,
+  loginUsuario,
 } from "../controllers/userController.js";
 import {
   cadastrarCategoria,
@@ -20,6 +21,7 @@ router.post("/conexao/testar", testarConexaoDB);
 
 //rotas usuários
 router.post("/cadastrar-usuario", cadastrarUsuario);
+router.post("/login", loginUsuario);
 router.get("/usuarios", listarUsuarios);
 
 //rotas categoria

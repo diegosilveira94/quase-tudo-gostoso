@@ -75,25 +75,46 @@
       <!-- Formulário de Cadastro -->
       <div class="form-container hidden" id="form-cadastro">
         <h2>Cadastro</h2>
-        <form>
+        <form id="form-cadastro-usuario">
           <div class="form-group">
-            <label for="cadastro-nome">Nome Completo</label>
-            <input type="text" id="cadastro-nome" placeholder="Seu nome completo" required />
+            <label for="cadastro-nome">Nome Completo*</label>
+            <input type="text" id="cadastro-nome" name="nome" placeholder="Seu nome completo" required />
           </div>
 
           <div class="form-group">
-            <label for="cadastro-email">Email</label>
-            <input type="email" id="cadastro-email" placeholder="seuemail@exemplo.com" required />
+            <label for="cadastro-email">Email*</label>
+            <input type="email" id="cadastro-email" name="email" placeholder="seuemail@exemplo.com" required />
           </div>
 
           <div class="form-group">
-            <label for="cadastro-senha">Senha</label>
-            <input type="password" id="cadastro-senha" placeholder="********" required />
+            <label for="cadastro-senha">Senha*</label>
+            <input type="password" id="cadastro-senha" name="senha" placeholder="********" required />
           </div>
 
           <div class="form-group">
-            <label for="cadastro-confirmar">Confirmar Senha</label>
+            <label for="cadastro-confirmar">Confirmar Senha*</label>
             <input type="password" id="cadastro-confirmar" placeholder="********" required />
+          </div>
+
+          <div class="form-group">
+            <label for="cadastro-data-nascimento">Data de Nascimento (opcional)</label>
+            <input type="date" id="cadastro-data-nascimento" name="dataNascimento" />
+          </div>
+
+          <div class="form-group">
+            <label for="cadastro-genero">Gênero (opcional)</label>
+            <select id="cadastro-genero" name="genero">
+              <option value="">Selecione</option>
+              <option value="Masculino">Masculino</option>
+              <option value="Feminino">Feminino</option>
+              <option value="Outro">Outro</option>
+              <option value="Prefiro não informar">Prefiro não informar</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="cadastro-cep">CEP (opcional)</label>
+            <input type="text" id="cadastro-cep" name="cep" placeholder="00000000" maxlength="8" />
           </div>
 
           <button type="submit" class="btn-submit">Criar Conta</button>

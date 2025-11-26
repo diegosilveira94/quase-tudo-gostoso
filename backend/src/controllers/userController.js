@@ -6,12 +6,16 @@ export const cadastrarUsuario = async (req, res) => {
 
     // validação básica
     if (!nome || !email || !senha) {
-      return res.status(400).json({ erro: "Nome, email e senha são obrigatórios!" });
+      return res
+        .status(400)
+        .json({ erro: "Nome, email e senha são obrigatórios!" });
     }
 
     // validação opcional do CEP (somente números)
     if (cep && !/^[0-9]+$/.test(String(cep))) {
-      return res.status(400).json({ erro: "CEP inválido. Use apenas números." });
+      return res
+        .status(400)
+        .json({ erro: "CEP inválido. Use apenas números." });
     }
 
     const usuario = await UserModel.create({
@@ -40,5 +44,41 @@ export const listarUsuarios = async (req, res) => {
   } catch (erro) {
     console.log("Erro ao listar usuários", erro);
     res.status(500).json({ erro: "Erro ao listar usuários " });
+  }
+};
+
+export const loginUsuario = async (req, res) => {
+  try {
+    const { email, senha } = req.body;
+
+    // Validação básica
+    if (!email || !senha) {
+      return res.status(400).json({ erro: "Email e senha são obrigatórios!" });
+    }
+
+    // Buscar usuário pelo email
+    const usuario = await UserModel.findOne({ where: { email } });
+
+    if (!usuario) {
+      return res.status(401).json({ erro: "Email ou senha incorretos!" });
+    }
+
+    // Verificar senha (comparação simples - sem hash para nível acadêmico)
+    if (usuario.senha !== senha) {
+      return res.status(401).json({ erro: "Email ou senha incorretos!" });
+    }
+
+    // Login bem-sucedido
+    res.status(200).json({
+      mensagem: "Login realizado com sucesso!",
+      usuario: {
+        id: usuario.id,
+        nome: usuario.nome,
+        email: usuario.email,
+      },
+    });
+  } catch (erro) {
+    console.error("Erro ao realizar login:", erro);
+    res.status(500).json({ erro: "Erro ao realizar login" });
   }
 };
